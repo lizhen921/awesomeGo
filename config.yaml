@@ -1,0 +1,5 @@
+kafka:
+  brokerList: 127.0.0.1:9092  #多个地址之间使用空格隔断
+  topic: test_topics
+  maxRetry: 3
+
