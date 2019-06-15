@@ -1,0 +1,8 @@
+首先配置根目录下的config.yaml中的kafka
+
+然后运行consumer_test.go中的TestConsumer方法
+
+然后运行producer_test.go中的TestProducer方法
+
+TestProducer会向kafka中写入'test kafka'，查看TestConsumer的终端，会消费该信息
+
