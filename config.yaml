@@ -2,4 +2,11 @@ kafka:
   brokerList: 127.0.0.1:9092  #多个地址之间使用空格隔断
   topic: test_topics
   maxRetry: 3
-
+mysql:
+  host: 127.0.0.1
+  port: 3306
+  db: awesome_go
+  user: root
+  pwd: root
+  maxIdle: 10
+  maxOpen: 5
