@@ -1,3 +1,6 @@
+# go垃圾回收
+
+## 逃逸分析
 
 在当前目录执行,`go build -gcflags=-m`，`-m`可以`print optimization decisions`，即打印编译过程中的优化内容，如下：
 
