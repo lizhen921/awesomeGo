@@ -65,7 +65,7 @@ func startPipCase() {
 	indata := startProduceData()
 	outData := startProcessData()
 	txPip.Setup(indata, outData)
-	//txPip.setup(indata, nil)
+	//txPip.Setup(indata, nil)
 	txPip.Start()
 
 	//waitRoutine := sync.WaitGroup{}
@@ -78,21 +78,21 @@ type preNode struct {
 	note string
 }
 
-func (p *preNode) produceData() {
+func produceData(node *Node) {
 	//note you can init some datas before start produce
 	for i := 0; i < 20; i++ {
 		s := "produce data : " + strconv.Itoa(i)
 		log.Println(s)
-		p.node.Output <- s
+		node.Output <- s
 		time.Sleep(time.Second)
 	}
 }
 func startProduceData() *Node {
-	pre := &preNode{
-		note: "just do nothing",
+	preNode := &Node{
+		Name: "just do nothing",
 	}
-	go pre.produceData()
-	return &pre.node
+	go produceData(preNode)
+	return preNode
 }
 
 type afterNode struct {
@@ -100,17 +100,17 @@ type afterNode struct {
 	messge string
 }
 
-func (a *afterNode) processResult() {
+func processResult(node *Node) {
 	for {
-		s := <-a.node.Input
+		s := <-node.Input
 		log.Println("get final data : ", s)
 		time.Sleep(time.Second)
 	}
 }
 func startProcessData() *Node {
-	after := afterNode{
-		messge: "just do nothing",
+	afterNode := &Node{
+		Name: "just do nothing",
 	}
-	go after.processResult()
-	return &after.node
+	go processResult(afterNode)
+	return afterNode
 }
