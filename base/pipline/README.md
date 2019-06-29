@@ -21,7 +21,7 @@ Pipline is a simple Go module to create pipelines to process data.
 详细使用方法参考`pipline_test.go`
 
 
-![image](https://raw.githubusercontent.com/altairlee/awesomeGo/master/images/awesomeGo.jpg)
+![image](https://raw.githubusercontent.com/altairlee/awesomeGo/master/images/pipline.jpg)
 
 
 
