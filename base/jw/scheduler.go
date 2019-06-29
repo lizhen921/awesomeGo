@@ -71,7 +71,10 @@ func (d *Scheduler) run() {
 				//判断channel是否关闭，select这种方式读取channel会在已闭关的chanel中读到一次nil
 				if ok {
 					worker.IsBusy = true
-					go d.runJob(worker, job)
+					go func() {
+						res := d.runJob(worker, job)
+						fmt.Println("todo 处理结果", res)
+					}()
 				} else {
 					fmt.Println("channel 已关闭")
 				}
@@ -80,7 +83,7 @@ func (d *Scheduler) run() {
 	}
 }
 
-func (d *Scheduler) runJob(w *Worker, j *Job) {
+func (d *Scheduler) runJob(w *Worker, j *Job) map[string]interface{} {
 	fmt.Println("work id : ", w, ", do job :", j)
 	j.Res = j.Func(j.Args)
 	w.IsBusy = false

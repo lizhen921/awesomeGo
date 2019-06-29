@@ -4,3 +4,8 @@
 
     MAXJOB：控制job缓存个数
     MAXWORKER：控制最大worker数量
+    
+
+TODO：
+
+如果job结果需要返回，怎么处理
