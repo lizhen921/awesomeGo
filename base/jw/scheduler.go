@@ -88,6 +88,7 @@ func (d *Scheduler) runJob(w *Worker, j *Job) map[string]interface{} {
 	j.Res = j.Func(j.Args)
 	w.IsBusy = false
 	d.IdleWorkChan <- w
+	return nil
 }
 
 //往Jobchan中添加job

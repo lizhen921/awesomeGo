@@ -31,3 +31,14 @@ func jobOne(args map[string]interface{}) map[string]interface{} {
 	fmt.Println(args)
 	return nil
 }
+
+func TestAA(t *testing.T) {
+	d, _ := time.ParseDuration("8h")
+	now := time.Now().UTC().Add(d)
+
+	itemTime := time.Now().UTC()
+	duHours := int((now.Sub(itemTime)).Hours()) - now.Hour() + itemTime.Hour()
+	duDays := duHours / 24
+	filterFromDurDays := 40 - 15
+	fmt.Println(duDays >= filterFromDurDays)
+}

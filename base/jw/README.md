@@ -9,3 +9,8 @@
 TODO：
 
 如果job结果需要返回，怎么处理
+
+
+参考：
+
+    http://blog.taohuawu.club/article/42#directory0798383148495393810
