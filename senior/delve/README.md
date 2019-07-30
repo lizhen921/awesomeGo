@@ -12,7 +12,6 @@
     $ make install
 
 
-
 打包命令：
 
     CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -a -gcflags "all=-N -l" -ldflags '-extldflags "-static"' -o main ./cmd/serve/main.go
@@ -22,6 +21,7 @@
     -a
     -gcflags
     -ldflags
+    -o
     
 
 
