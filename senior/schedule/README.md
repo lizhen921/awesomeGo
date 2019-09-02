@@ -12,7 +12,7 @@
 5. M 的个数和 P 的个数不一定一样多（会有休眠的M 或 P不绑定M ）（最大10000）
 6. P 是用一个全局数组（255）来保存的，并且维护着一个全局的 P 空闲链表
 
-![image](https://lzblog.oss-cn-hangzhou.aliyuncs.com/blog/goschedule/g-m-p.png?x-oss-process=style/lzblog-print)
+![image](https://raw.githubusercontent.com/altairlee/awesomeGo/master/images/goschedule/g-m-p.png)
 
 ## 本地队列和全局队列
 
