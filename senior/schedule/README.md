@@ -8,7 +8,7 @@
 
 Erlang 之父 Joe Armstrong 的解释，如下图：
 
-![image](https://raw.githubusercontent.com/altairlee/awesomeGo/master/images/goschedule/g-m-p.png)
+![image](http://github.com/altairlee/awesomeGo/blob/master/images/goschedule/%E5%B9%B6%E5%8F%91%E5%B9%B6%E8%A1%8C.jpg?raw=true)
 
 
 ## 调度器的三个基本对象：
@@ -24,7 +24,7 @@ Erlang 之父 Joe Armstrong 的解释，如下图：
 5. M的个数和P的个数不一定一样多（会有休眠的M或P不绑定M）（最大10000）
 6. P是用一个全局数组（255）来保存的，并且维护着一个全局的P空闲链表
 
-![image](https://raw.githubusercontent.com/altairlee/awesomeGo/master/images/goschedule/g-m-p.png)
+![image](http://github.com/altairlee/awesomeGo/blob/master/images/goschedule/g-m-p.png?raw=true)
 
 ## G任务调度
 
