@@ -1,3 +1,15 @@
+## 并发和并行
+
+在编程领域，并发（Concurrency）是独立的执行过程 (Process)的组合，而并行（Parallelism)则是计算（可能是相关联的）的同时执行。
+
+并发（Concurrency)是关于同时 应对很多事情(deal with lots of things)
+
+并行（Parallelism)则是同时做许多事情(do lots of things)"
+
+Erlang 之父 Joe Armstrong 的解释，如下图：
+
+![image](https://raw.githubusercontent.com/altairlee/awesomeGo/master/images/goschedule/g-m-p.png)
+
 
 ## 调度器的三个基本对象：
 * G (Goroutine)，代表协程，也就是每次代码中使用 go 关键词时候会创建的一个对象
@@ -39,6 +51,10 @@
     2.局部与局部：一次转移一半（Work stealing算法）
 ```
 
-## 如何触发调度
+## 抢占式调度
+
+在每个方法或者函数的入口，增加一段代码，让runtime有机会检查是否需要执行抢占式调度。这种解决方案，对于没有函数调用G，scheduler依然无法抢占
+
+
 
 
