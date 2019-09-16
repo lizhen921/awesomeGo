@@ -34,3 +34,5 @@ func assertPerson(i interface{}) Person {
 	}
 	return p
 }
+
+type String string
