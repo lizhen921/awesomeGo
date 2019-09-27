@@ -1,6 +1,7 @@
 package pipline
 
 import (
+	"fmt"
 	"log"
 	"strconv"
 	"testing"
@@ -106,4 +107,13 @@ func startProcessData() *Node {
 	}
 	go processResult(afterNode)
 	return afterNode
+}
+
+func TestSlice(t *testing.T) {
+	rcmResultList := []int{1, 2, 3, 4}
+	fmt.Printf("%v\n", rcmResultList[0:3])
+	position := 2
+	rcmResultList = append(rcmResultList[:position+1], rcmResultList[position:]...)
+	fmt.Printf("%v", rcmResultList)
+
 }
