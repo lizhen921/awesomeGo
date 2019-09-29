@@ -1,0 +1,15 @@
+syntax = 'proto3';
+
+package proto;
+
+service SearchService{
+    rpc Search(SearchReq) returns(SearchRes){}
+}
+
+message SearchReq{
+    string req = 1;
+}
+
+message SearchRes{
+    string res = 1;
+}
