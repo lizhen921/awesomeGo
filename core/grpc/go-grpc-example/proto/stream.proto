@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package proto;
+
+service StreamService{
+    rpc ServerSideStream(StreamReq)returns(stream StreamRes){}; //服务器端流式 RPC
+    rpc ClientSideStream(stream StreamReq)returns(StreamRes){}; //客户端流式 RPC
+    rpc DoubleSideStream(stream StreamReq) returns (stream StreamRes){}; //双向流式 RPC
+}
+
+message StreamPoint{
+    string name = 1 ;
+    int32 value = 2;
+}
+
+message StreamReq{
+    StreamPoint pt = 1;
+}
+
+message StreamRes{
+    StreamPoint pt = 1;
+}
