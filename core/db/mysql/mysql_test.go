@@ -1,8 +1,9 @@
-package db
+package mysql
 
 import (
 	"database/sql"
 	"fmt"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/lexkong/log"
 	"testing"
 	"time"
@@ -96,4 +97,20 @@ func TestExecute(t *testing.T) {
 
 	//TODO
 	fmt.Println(tbAwesome)
+}
+
+func TestMysqlDemo(t *testing.T) {
+	db, err := sql.Open("mysql", "root:root@tcp(127.0.0.1)/awesome_go?charset=utf8&allowOldPasswords=1")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	defer db.Close()
+
+	rows, err := db.Query("select * from tb_awesome")
+
+	for rows.Next() {
+		//row.Scan(...)
+	}
+	rows.Close()
 }
