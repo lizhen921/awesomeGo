@@ -1,0 +1,2846 @@
+{
+  "routers": [
+    {
+      "name": "autojrbank",
+      "pids": [
+        "200013"
+      ],
+      "url": "/autojrbank/lands",
+      "desHostList": [
+        "http://autojrbank.autohome.com.cn/rcm/autojrbank/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 1000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autojrbank.autohome.com.cn/rcm/autojrbank/lands"
+      ]
+    },
+    {
+      "name": "autodianshang",
+      "pids": [
+        "100073",
+        "100080",
+        "100089",
+        "100088",
+        "100085",
+        "100132",
+        "100074",
+        "100082",
+        "100055",
+        "200011",
+        "100072",
+        "100075",
+        "100076",
+        "100077",
+        "100078",
+        "100079",
+        "100081",
+        "100083",
+        "100084",
+        "100086",
+        "100087",
+        "100090",
+        "100091",
+        "100092",
+        "100093",
+        "100094",
+        "100095",
+        "100096",
+        "100097",
+        "100098",
+        "100099",
+        "100100",
+        "100101",
+        "100102"
+      ],
+      "url": "/oneapi/autodianshang/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 1000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autosearchbox",
+      "url": "/autosearchbox/lands",
+      "desHostList": [
+        "http://lf.autobusiness.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 545,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://lf.autobusiness.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ]
+    },
+    {
+      "name": "autosearchword",
+      "url": "/autosearchword/lands",
+      "desHostList": [
+        "http://lf.autobusiness.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 545,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://lf.autobusiness.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ]
+    },
+    {
+      "name": "autosearchsug",
+      "url": "/autosearchsug/lands",
+      "desHostList": [
+        "http://lf.autobusiness.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 545,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://lf.autobusiness.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ]
+    },
+    {
+      "name": "autosearchvip",
+      "url": "/autosearchvip/lands",
+      "desHostList": [
+        "http://lf.autobusiness.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 545,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://lf.autobusiness.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ]
+    },
+    {
+      "name": "bsautosearch",
+      "url": "/bsautosearch/lands",
+      "desHostList": [
+        "http://lf.autobusiness.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 545,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://lf.autobusiness.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ]
+    },
+    {
+      "name": "oneflow",
+      "url": "/oneflow/lands",
+      "desHostList": [
+        "http://lf.autobusiness.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://lf.autobusiness.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ]
+    },
+    {
+      "name": "bannerservice",
+      "url": "/oneapi/v1",
+      "desHostList": [
+        "http://lf.data.bssmall.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 545,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://lf.data.bssmall.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ]
+    },
+    {
+      "name": "bannerservice",
+      "url": "/bannerservice/lands",
+      "pids": [
+        "101001",
+        "201001",
+        "100108",
+        "100153",
+        "200031",
+        "300020",
+        "200032",
+        "300021",
+        "200033",
+        "300022"
+      ],
+      "desHostList": [
+        "http://lf.autobusiness.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 545,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://lf.autobusiness.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ]
+    },
+    {
+      "name": "autonewenergy_weekly",
+      "url": "/autonewenergy_weekly/lands",
+      "pids": [
+        "10203000001"
+      ],
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/newenergy_weekly/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 545,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/newenergy_weekly/lands"
+      ]
+    },
+    {
+      "name": "autonewenergy_weekly",
+      "url": "/oneapi/autonewenergy_weekly/lands",
+      "pids": [
+        "100112"
+      ],
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 545,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autonewcar_old",
+      "url": "/autonewcar_old/lands",
+      "desHostList": [
+        "http://newcarold.rcm.autohome.com.cn/rcm/autohmpg2/v3.0/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 545,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://newcarold.rcm.autohome.com.cn/rcm/autohmpg2/v3.0/lands"
+      ]
+    },
+    {
+      "name": "autonewcar_old",
+      "pids": [
+        "100038"
+      ],
+      "url": "/oneapi/autonewcar_old/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 545,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autonewcar",
+      "url": "/autonewcar/lands",
+      "pids": [
+        "10202900001",
+        "10202900002",
+        "10202900003"
+      ],
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/maixinche/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 545,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/maixinche/lands"
+      ]
+    },
+    {
+      "name": "fastapp",
+      "url": "/rcm/fastapp/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/fastapp/lands"
+      ],
+      "routerHashKey": [
+        "sessionid",
+        "deviceid",
+        "uid",
+        "_appid",
+        "_sign"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/fastapp/lands"
+      ]
+    },
+    {
+      "name": "fastapp",
+      "pids": [
+        "10200700002",
+        "400022",
+        "400026",
+        "400028"
+      ],
+      "url": "/oneapi/rcm/fastapp/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/fastapp/lands"
+      ],
+      "routerHashKey": [
+        "sessionid",
+        "deviceid",
+        "uid",
+        "_appid",
+        "_sign"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/fastapp/lands"
+      ]
+    },
+    {
+      "name": "fastapp",
+      "pids": [
+        "400003",
+        "400007",
+        "400008",
+        "400009",
+        "400010",
+        "400011",
+        "400012",
+        "400013",
+        "400014",
+        "400015"
+      ],
+      "url": "/autorank/rcm/fastapp/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "sessionid",
+        "deviceid",
+        "uid",
+        "_appid",
+        "_sign"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autozaobao",
+      "url": "/autozaobao/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autozaobao/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autozaobao/lands"
+      ]
+    },
+    {
+      "name": "autozaobao",
+      "pids": [
+        "100004",
+        "100054"
+      ],
+      "url": "/oneapi/autozaobao/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "clubvideorecommend",
+      "url": "/autosmallvideo2/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autosmallvideo2/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autosmallvideo2/lands"
+      ]
+    },
+    {
+      "name": "clubvideorecommend",
+      "url": "/openapi/autosmallvideo2/lands",
+      "pids": [
+        "100044"
+      ],
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autosmallvideo3",
+      "url": "/autosmallvideo3/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autosmallvideo3/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autosmallvideo3/lands"
+      ]
+    },
+    {
+      "name": "autosmallvideo3",
+      "url": "/rcm/smallvideo3/v1.0",
+      "pids": [
+        "100049"
+      ],
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autojinrong",
+      "url": "/autojinrong/lands",
+      "pids": [
+        "100103",
+        "100104",
+        "100105"
+      ],
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autovrcenter",
+      "url": "/autovrcenter/lands",
+      "deshostlist": [
+        "http://autohmpg.rcm.autohome.com.cn/autovrcenter/lands"
+      ],
+      "routerhashkey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerstrategy": "hash",
+      "serverresponsetime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "servertolerance": 10,
+      "retryinterval": 10000,
+      "backuphostlist": [
+        "http://autohmpg.rcm.autohome.com.cn/autovrcenter/lands"
+      ]
+    },
+    {
+      "name": "autovrcenter",
+      "url": "/oneapi/autovrcenter/lands",
+      "pids": [
+        "100018"
+      ],
+      "deshostlist": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerhashkey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerstrategy": "hash",
+      "serverresponsetime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "servertolerance": 10,
+      "retryinterval": 10000,
+      "backuphostlist": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autoweekly",
+      "url": "/autoweekly/lands",
+      "deshostlist": [
+        "http://autohmpg.rcm.autohome.com.cn/autoweekly/lands"
+      ],
+      "routerhashkey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerstrategy": "hash",
+      "serverresponsetime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "servertolerance": 10,
+      "retryinterval": 10000,
+      "backuphostlist": [
+        "http://autohmpg.rcm.autohome.com.cn/autoweekly/lands"
+      ]
+    },
+    {
+      "name": "autowenda",
+      "url": "/autowenda/lands",
+      "deshostlist": [
+        "http://autohmpg.rcm.autohome.com.cn/autowenda/lands"
+      ],
+      "routerhashkey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerstrategy": "hash",
+      "serverresponsetime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "servertolerance": 10,
+      "retryinterval": 10000,
+      "backuphostlist": [
+        "http://autohmpg.rcm.autohome.com.cn/autowenda/lands"
+      ]
+    },
+    {
+      "name": "autoyongche",
+      "url": "/autoyongche/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autoyongche/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autoyongche/lands"
+      ]
+    },
+    {
+      "name": "autoyongche",
+      "pids": [
+        "100001",
+        "200001"
+      ],
+      "url": "/oneapi/autoyongche/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autoapp2",
+      "url": "/rcm/autoapp2/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/autoapp2/lands"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/autoapp2/lands"
+      ]
+    },
+    {
+      "name": "autoapp2",
+      "pids": [
+        "100062"
+      ],
+      "url": "/oneapi/rcm/autoapp2/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autoapp3",
+      "url": "/autoapp3/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autoapp3/lands"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autoapp3/lands"
+      ]
+    },
+    {
+      "name": "autoapp3",
+      "url": "/oneapi/autoapp3/lands",
+      "pids": [
+        "100047"
+      ],
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autochejhpctext",
+      "url": "/oneapi/autochejhpctext/lands",
+      "pids": [
+        "300008"
+      ],
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "sessionid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "relationrecommend",
+      "url": "/rcm/relativeitems/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/relativeitems/lands"
+      ],
+      "routerHashKey": [
+        "sessionid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/relativeitems/lands"
+      ]
+    },
+    {
+      "name": "relationrecommend",
+      "url": "/rcm/RelativeRecommend/common",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/relativeitems/lands"
+      ],
+      "routerHashKey": [
+        "sessionid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/relativeitems/lands"
+      ]
+    },
+    {
+      "name": "relationrecommend",
+      "url": "/rcm/RelativeRecommend/seriesrecommend",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/relativeitems/lands"
+      ],
+      "routerHashKey": [
+        "sessionid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/relativeitems/lands"
+      ]
+    },
+    {
+      "name": "relationrecommend",
+      "url": "/rcm/RelativeRecommend/outmedia",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/relativeitems/lands"
+      ],
+      "routerHashKey": [
+        "sessionid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/relativeitems/lands"
+      ]
+    },
+    {
+      "name": "relationrecommend",
+      "url": "/rcm/RelativeRecommend/seriesalbum",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/relativeitems/lands"
+      ],
+      "routerHashKey": [
+        "sessionid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/relativeitems/lands"
+      ]
+    },
+    {
+      "name": "autovideo2",
+      "url": "/autovideo2/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autovideo2/lands"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "serverTolerance": 10,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autovideo2/lands"
+      ]
+    },
+    {
+      "name": "autovideo2",
+      "pids": [
+        "400002",
+        "400006",
+        "400016",
+        "400017",
+        "400018",
+        "400019",
+        "400020"
+      ],
+      "url": "/oneapi/rcm/autovideo2/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "serverTolerance": 10,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autoseriescard52",
+      "url": "/autoseriescard52/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autoseriescard52/lands"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autoseriescard52/lands"
+      ]
+    },
+    {
+      "name": "autoseriescard52",
+      "pids": [
+        "100052"
+      ],
+      "url": "/oneapi/autoseriescard52/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autobrandseries",
+      "pids": [
+        "100113"
+      ],
+      "url": "/autobrandseries/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autobrandseries/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autobrandseries/lands"
+      ]
+    },
+    {
+      "name": "autobrandseries",
+      "pids": [
+        "100002",
+        "100003",
+        "100013",
+        "100016",
+        "100017",
+        "100059",
+        "100060",
+        "100065",
+        "100066",
+        "100061",
+        "100068"
+      ],
+      "url": "/oneapi/autobrandseries/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autokoubei",
+      "url": "/autokoubei/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autokoubei/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autokoubei/lands"
+      ]
+    },
+    {
+      "name": "autokoubei",
+      "url": "/rcm/autokoubei/lands",
+      "pids": [
+        "100048"
+      ],
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autotopic",
+      "url": "/autotopic/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autotopic/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autotopic/lands"
+      ]
+    },
+    {
+      "name": "autosmallvideo",
+      "url": "/oneapi/v2",
+      "pids": [
+        "100010",
+        "100007",
+        "400025"
+      ],
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autopicture",
+      "url": "/rcm/autopicture/lands",
+      "pids": [
+        "100012"
+      ],
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autopicture",
+      "url": "/autopicture/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autopicture/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autopicture/lands"
+      ]
+    },
+    {
+      "name": "autochejiahao",
+      "pids": [
+        "100026"
+      ],
+      "url": "/oneapi/autochejiahao/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autonewenergy",
+      "url": "/autonewenergy/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autonewenergy/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autonewenergy/lands"
+      ]
+    },
+    {
+      "name": "autonewenergy",
+      "url": "/oneapi/autonewenergy/lands",
+      "pids": [
+        "100009",
+        "200015",
+        "400027",
+        "400029",
+        "400030",
+        "400031",
+        "400032",
+        "400033",
+        "400034",
+        "400035",
+        "400036",
+        "400037",
+        "400038",
+        "400039",
+        "400040",
+        "400041"
+      ],
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autotraveler",
+      "url": "/autotraveler/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autotraveler/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autotraveler/lands"
+      ]
+    },
+    {
+      "name": "autotraveler",
+      "url": "/oneapi/autotraveler/lands",
+      "pids": [
+        "100028"
+      ],
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autotravelermall",
+      "url": "/oneapi/autotravelermall/lands",
+      "pids": [
+        "100133",
+        "200028",
+        "300017"
+      ],
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autocarware",
+      "url": "/autocarware/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autocarware/lands"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autocarware/lands"
+      ]
+    },
+    {
+      "name": "autocarware",
+      "pids": [
+        "100051",
+        "100056",
+        "100126",
+        "200022",
+        "300012"
+      ],
+      "url": "/oneapi/autocarware/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autoyougth",
+      "url": "/autoyougth/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autoyougth/lands"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autoyougth/lands"
+      ]
+    },
+    {
+      "name": "autoyougth",
+      "pids": [
+        "300006",
+        "100027",
+        "200007"
+      ],
+      "url": "/openapi/autoyougth/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autocarmall",
+      "url": "/autocarmall/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autocarmall/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autocarmall/lands"
+      ]
+    },
+    {
+      "name": "autocheyouquan",
+      "url": "/autocheyouquan/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autocheyouquan/lands"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autocheyouquan/lands"
+      ]
+    },
+    {
+      "name": "autocheyouquan",
+      "pids": [
+        "100063",
+        "100069",
+        "100181"
+      ],
+      "url": "/rcmallinone/oneapi/autocheyouquan/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autouserinitinfo",
+      "url": "/rcm/autouserinitinfo",
+      "desHostList": [
+        "http://localhost:9994/rcm/autouserinitinfo"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://localhost:9994/rcm/autouserinitinfo"
+      ]
+    },
+    {
+      "name": "autodealerordersucc",
+      "url": "/rcm/autodealerordersucc",
+      "desHostList": [
+        "http://localhost:9993/rcm/autodealerordersucc"
+      ],
+      "routerHashKey": [
+        "cityId",
+        "specId"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://localhost:9993/rcm/autodealerordersucc"
+      ]
+    },
+    {
+      "name": "autoMall8",
+      "url": "/rcm/automall",
+      "desHostList": [
+        "http://localhost:53376/rcm/automall",
+        "http://localhost:53376/rcm/automall"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://localhost:53376/rcm/automall"
+      ]
+    },
+    {
+      "name": "automall6",
+      "url": "/rcm/automall6",
+      "desHostList": [
+        "http://data.autohome.com.cn/rcm/bbscontent",
+        "http://data.autohome.com.cn/rcm/bbscontent"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://data.autohome.com.cn/rcm/bbscontent"
+      ]
+    },
+    {
+      "name": "autovideo",
+      "url": "/rcm/autovideo/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/autovideo/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/autovideo/lands"
+      ]
+    },
+    {
+      "name": "autovideo",
+      "url": "/oneapi/autovideo/lands",
+      "pids": [
+        "100014",
+        "200004"
+      ],
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autohmpg2",
+      "url": "/rcm/autohmpg2/v3.0/lands",
+      "desHostList": [
+        "http://10.28.86.5:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.6:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.12:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.13:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.18:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.19:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.20:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.21:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.22:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.36:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.37:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.38:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.39:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.40:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.41:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.43:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.44:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.45:9092/rcm/autohmpg2/v3.0/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 470,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "businessServingTime": 300,
+      "backupHostList": [
+        "http://10.28.86.5:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.6:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.12:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.13:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.18:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.19:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.20:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.21:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.22:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.36:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.37:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.38:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.39:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.40:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.41:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.43:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.44:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.45:9092/rcm/autohmpg2/v3.0/lands"
+      ]
+    },
+    {
+      "name": "autosearch",
+      "pids": [
+        "10203100001"
+      ],
+      "url": "/oneapi/rcm/autohmpg2/v3.0/lands",
+      "desHostList": [
+        "http://10.28.86.69:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.70:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.71:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.72:9092/rcm/autohmpg2/v3.0/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 545,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://10.28.86.69:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.70:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.71:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.72:9092/rcm/autohmpg2/v3.0/lands"
+      ]
+    },
+    {
+      "name": "autosearch",
+      "pids": [
+        "100006"
+      ],
+      "url": "/oneapi/autosearch/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 545,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autohmpg2number",
+      "url": "/rcm/autohmpg2/v3.0/lands/number",
+      "desHostList": [
+        "http://10.28.86.5:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.6:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.18:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.12:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.13:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.19:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.20:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.21:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.22:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.36:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.37:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.38:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.39:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.40:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.41:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.43:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.44:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.45:9092/rcm/autohmpg2/v3.0/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 400,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://10.28.86.5:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.6:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.18:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.12:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.13:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.19:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.20:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.21:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.22:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.36:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.37:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.38:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.39:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.40:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.41:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.43:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.44:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.45:9092/rcm/autohmpg2/v3.0/lands"
+      ]
+    },
+    {
+      "name": "autohmpg2pingan",
+      "url": "/pingan/lands",
+      "desHostList": [
+        "http://10.27.241.179:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.27.241.180:9092/rcm/autohmpg2/v3.0/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 400,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://10.27.241.179:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.27.241.180:9092/rcm/autohmpg2/v3.0/lands"
+      ]
+    },
+    {
+      "name": "autodealerareacover",
+      "url": "/rcm/autodealerareacover",
+      "desHostList": [
+        "http://localhost:9992/rcm/autodealerareacover"
+      ],
+      "routerHashKey": [
+        "cityId",
+        "specId"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://localhost:9992/rcm/autodealerareacover"
+      ]
+    },
+    {
+      "name": "automallhome",
+      "url": "/rcm/automallhome",
+      "desHostList": [
+        "http://localhost:9920/rcm/automallhome"
+      ],
+      "routerHashKey": [
+        "Cookie"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://localhost:9920/rcm/automallhome"
+      ]
+    },
+    {
+      "name": "autoappfind",
+      "url": "/rcm/autoappfind",
+      "desHostList": [
+        "http://localhost:9997/rcm/autoappfind"
+      ],
+      "routerHashKey": [
+        "DeviceId"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://localhost:9997/rcm/autoappfind"
+      ]
+    },
+    {
+      "name": "automobile",
+      "pids": [
+        "200005"
+      ],
+      "url": "/rcm/automobile/lands",
+      "desHostList": [
+        "http://10.28.86.5:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.6:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.18:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.12:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.13:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.19:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.20:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.21:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.22:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.36:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.37:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.38:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.39:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.40:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.41:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.43:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.44:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.45:9092/rcm/autohmpg2/v3.0/lands"
+      ],
+      "routerHashKey": [
+        "key"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://10.28.86.5:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.6:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.18:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.12:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.13:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.19:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.20:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.21:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.22:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.36:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.37:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.38:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.39:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.40:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.41:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.43:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.44:9092/rcm/autohmpg2/v3.0/lands",
+        "http://10.28.86.45:9092/rcm/autohmpg2/v3.0/lands"
+      ]
+    },
+    {
+      "name": "test",
+      "url": "/test",
+      "desHostList": [
+        "http://localhost:54321/test1"
+      ],
+      "routerHashKey": [
+        "key"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://localhost:54321/test1"
+      ]
+    },
+    {
+      "name": "autolbs",
+      "url": "/autolbs/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autolbs/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "sessionid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autolbs/lands"
+      ]
+    },
+    {
+      "name": "autolbs",
+      "pids": [
+        "100053",
+        "200010"
+      ],
+      "url": "oneapi/rcm/autolbs/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "sessionid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autopctextlink",
+      "url": "/autopctextlink/lands",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autopctextlink/lands"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/autopctextlink/lands"
+      ]
+    },
+    {
+      "name": "autopctextlink",
+      "pids": [
+        "300009"
+      ],
+      "url": "/oneapi/autopctextlink/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "mainaccess",
+      "url": "/rcm/autobuy/mainaccess",
+      "desHostList": [
+        "http://rcmdata.in.autohome.com.cn/rcm/autobuy/mainaccess"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "sessionid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://rcmdata.in.autohome.com.cn/rcm/autobuy/mainaccess"
+      ]
+    },
+    {
+      "name": "mainaccess",
+      "pids": [
+        "200012",
+        "300005"
+      ],
+      "url": "/oneapi/rcm/autobuy/mainaccess",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "sessionid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autosmallvideo4",
+      "url": "/oneapi/autosmallvideo4/lands",
+      "pids": [
+        "100106"
+      ],
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autowenda",
+      "pids": [
+        "100111",
+        "100123",
+        "100127",
+        "400042"
+      ],
+      "url": "/oneapi/rcm/autowenda/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "sessionid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "relationrecommend",
+      "url": "/oneapi/rcm/relativeitems/lands",
+      "pids": [
+        "100151",
+        "100152",
+        "100034",
+        "100071",
+        "100064",
+        "100067",
+        "100005",
+        "300001",
+        "200008",
+        "300003",
+        "100033",
+        "100035",
+        "100114",
+        "200002",
+        "100107",
+        "100115",
+        "100119",
+        "100120",
+        "100121",
+        "100122",
+        "200016",
+        "200017",
+        "200018",
+        "200019",
+        "100135",
+        "100136",
+        "100137",
+        "200030",
+        "300002",
+        "300019"
+      ],
+      "desHostList": [
+        "http://autorankrelation.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "sessionid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorankrelation.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autonewcar",
+      "url": "/oneapi/autonewcar/lands",
+      "pids": [
+        "100057",
+        "100058",
+        "100036",
+        "100037",
+        "100039",
+        "100040",
+        "100041",
+        "100042",
+        "100043"
+      ],
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "sessionid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "relationrecommend",
+      "url": "/rcm/RelativeRecommend/videorelation",
+      "desHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/videorelation/lands"
+      ],
+      "routerHashKey": [
+        "sessionid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autohmpg.rcm.autohome.com.cn/rcm/videorelation/lands"
+      ]
+    },
+    {
+      "name": "autochejiahao818zhuanti",
+      "pids": [
+        "100124",
+        "200020",
+        "300010",
+        "100125",
+        "200021",
+        "300011"
+      ],
+      "url": "/oneapi/autochejiahao818zhuanti/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autochejiahao818brand",
+      "pids": [
+        "100128",
+        "200023",
+        "300013"
+      ],
+      "url": "/oneapi/autochejiahao818brand/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "userproduct818",
+      "pids": [
+        "100129",
+        "200025",
+        "300014",
+        "100130",
+        "200026",
+        "300015"
+      ],
+      "url": "/oneapi/userproduct818/lands",
+      "desHostList": [
+        "http://autorank818.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank818.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "818dazhuanticontent",
+      "pids": [
+        "100131",
+        "200027",
+        "300016"
+      ],
+      "url": "/oneapi/818dazhuanticontent/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autoguanzhu",
+      "pids": [
+        "100118",
+        "100117",
+        "100116"
+      ],
+      "url": "/oneapi/rcm/autoguanzhu/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "sessionid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autotravelertopic",
+      "pids": [
+        "300018",
+        "100134",
+        "200029"
+      ],
+      "url": "/oneapi/autotravelertopic/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autospeedapp",
+      "pids": [
+        "100150"
+      ],
+      "url": "/oneapi/autospeedapp/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autospeedfresh",
+      "pids": [
+        "100178"
+      ],
+      "url": "/oneapi/autospeedfresh/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "autochejhzhuanti",
+      "pids": [
+        "300023",
+        "200056",
+        "100179"
+      ],
+      "url": "/oneapi/autochejhzhuanti/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "dianshangcategory",
+      "pids": [
+        "100140",
+        "100141",
+        "100142",
+        "100143",
+        "100144",
+        "100145",
+        "100146",
+        "100147",
+        "100148",
+        "100149"
+      ],
+      "url": "/oneapi/dianshangcategory/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "dianshanghot",
+      "pids": [
+        "100154"
+      ],
+      "url": "/oneapi/dianshanghot/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "brandseries_yongche",
+      "pids": [
+        "100155"
+      ],
+      "url": "/oneapi/brandseries_yongche/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    },
+    {
+      "name": "floatingball",
+      "pids": [
+        "100156",
+        "200034",
+        "100157",
+        "200035",
+        "100158",
+        "200036",
+        "100159",
+        "200037",
+        "100160",
+        "200038",
+        "100161",
+        "200039",
+        "100162",
+        "200040",
+        "100163",
+        "200041",
+        "100164",
+        "200042",
+        "100165",
+        "200043",
+        "100166",
+        "200044",
+        "100167",
+        "200045",
+        "100168",
+        "200046",
+        "100169",
+        "200047",
+        "100170",
+        "200048",
+        "100171",
+        "200049",
+        "100172",
+        "200050",
+        "100173",
+        "200051",
+        "100174",
+        "200052",
+        "100175",
+        "200053",
+        "100176",
+        "200054",
+        "100177",
+        "200055"
+      ],
+      "url": "/floatingball/lands",
+      "desHostList": [
+        "http://lf.autobusiness.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "roundrobin",
+      "serverResponseTime": 545,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://lf.autobusiness.autohome.com.cn/rcm/autobusiness/v3.0/lands"
+      ]
+    },
+    {
+      "name": "search_discover",
+      "pids": [
+        "100180"
+      ],
+      "url": "/oneapi/search_discover/lands",
+      "desHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ],
+      "routerHashKey": [
+        "deviceid",
+        "uid"
+      ],
+      "routerStrategy": "hash",
+      "serverResponseTime": 2000,
+      "timeoutRatio": [
+        1,
+        1
+      ],
+      "serverTolerance": 10,
+      "retryInterval": 10000,
+      "backupHostList": [
+        "http://autorank.in.autohome.com.cn/rcm/autorank/v1.0"
+      ]
+    }
+  ]
+}

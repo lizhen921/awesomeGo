@@ -42,3 +42,9 @@ func TestAA(t *testing.T) {
 	filterFromDurDays := 40 - 15
 	fmt.Println(duDays >= filterFromDurDays)
 }
+
+func TestItemBizTypeFilter(t *testing.T) {
+
+	s := ItemBizTypeFilter(73, 2531594070338617343, 75162092031, nil, nil)
+	fmt.Println(s)
+}

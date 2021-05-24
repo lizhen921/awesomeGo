@@ -1,5 +1,7 @@
 module awesomeGo
 
+go 1.14
+
 require (
 	github.com/Shopify/sarama v1.22.1
 	github.com/gin-gonic/gin v1.4.0

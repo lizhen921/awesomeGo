@@ -13,6 +13,7 @@ type Person struct {
 type Animal struct {
 	Name string
 	Age  string
+	Type int
 }
 
 var data *struct {
