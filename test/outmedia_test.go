@@ -271,7 +271,6 @@ func TestGenoutmedia(t *testing.T) {
 			if count != 1 {
 				fmt.Printf("outmedia3, biztype:[%v]\n", biztype)
 			}
-
 		}
 	}
 	fmt.Println(media)
