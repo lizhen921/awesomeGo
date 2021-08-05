@@ -18,6 +18,9 @@
 package main
 
 import (
+	"errors"
+	"fmt"
+	errf "github.com/pkg/errors"
 	"sync"
 	"time"
 )
@@ -87,6 +90,35 @@ func main() {
 	//b, err := json.Marshal(node)
 	//fmt.Println(string(b))
 
+	//实验解析
+	/*	pvdata := "OAQAAAgAAAACISAAAAgAgACBwEcQhAeU7wcHEAAAgEYABBAoUAUiAIAAEAAAAIIAQAAAAIAAAACAgkIAAAgIYoQBAAAwCAIAACACAwAAIAAABAAQAQBAIIIAAAAQAAAAAAAAACEQEQAYBQAAGFCGgAAASEAFMEGICCCyKgCAKhgAFIAAAAAAAABCAAAAAAQCAAAAAAAAAEAAgAAAACAAIAARSCEAEAACABACAFAgBAAAAIAAEIAAAQIAAAA="
+		decoded, _ := base64.StdEncoding.DecodeString(pvdata)
+		idxMap := make(map[int]bool)
+		for i, v := range decoded {
+			if v == 0 {
+				continue
+			}
+			fmt.Printf("%8b:", v)
+			for j := 0; j < 8; j++ {
+				if v == 0 {
+					break
+				}
+				if (v & 1) == 1 {
+					idx := i*8 + j + 1
+					idxMap[idx] = true
+					fmt.Print(idx, ",")
+				}
+				v = v >> 1
+			}
+			fmt.Println("")
+		}
+		fmt.Println(idxMap)
+	*/
+	err := errors.New("1")
+
+	fmt.Printf("err EOF : %+v\n", errf.Wrap(err, "2"))
+	fmt.Println(errf.WithMessage(err, "3"))
+	fmt.Println(errf.WithStack(err))
 }
 
 type A struct {
