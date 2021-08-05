@@ -95,6 +95,9 @@ github.com/pelletier/go-toml
 # github.com/pierrec/lz4 v0.0.0-20190327172049-315a67e90e41
 github.com/pierrec/lz4
 github.com/pierrec/lz4/internal/xxh32
+# github.com/pkg/errors v0.8.0
+## explicit
+github.com/pkg/errors
 # github.com/rcrowley/go-metrics v0.0.0-20181016184325-3113b8401b8a
 github.com/rcrowley/go-metrics
 # github.com/spf13/afero v1.1.2

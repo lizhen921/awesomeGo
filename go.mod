@@ -15,6 +15,7 @@ require (
 	github.com/lexkong/log v0.0.0-20180607165131-972f9cd951fc
 	github.com/onsi/ginkgo v1.8.0 // indirect
 	github.com/onsi/gomega v1.5.0 // indirect
+	github.com/pkg/errors v0.8.0
 	github.com/spf13/viper v1.4.0
 	golang.org/x/net v0.0.0-20190620200207-3b0461eec859
 	google.golang.org/appengine v1.4.0 // indirect
