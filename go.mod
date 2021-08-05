@@ -1,13 +1,16 @@
 module awesomeGo
 
-go 1.14
+go 1.16
 
 require (
 	github.com/Shopify/sarama v1.22.1
+	github.com/bitly/go-simplejson v0.5.0
+	github.com/garyburd/redigo v1.6.2
 	github.com/gin-gonic/gin v1.4.0
 	github.com/go-sql-driver/mysql v1.4.1
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
 	github.com/golang/protobuf v1.3.1
+	github.com/gomodule/redigo v1.8.5
 	github.com/grpc-ecosystem/grpc-gateway v1.9.2
 	github.com/lexkong/log v0.0.0-20180607165131-972f9cd951fc
 	github.com/onsi/ginkgo v1.8.0 // indirect
