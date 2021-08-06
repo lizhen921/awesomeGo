@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/lexkong/log"
 	"testing"
 	"time"
 )
@@ -61,7 +60,8 @@ func TestQuery(t *testing.T) {
 	}
 	//检查错误，需要确认已经正确的处理了所有行
 	if rows.Err() != nil {
-		log.Error("err: ", err)
+		//log.Error("err: ", err)
+		fmt.Errorf("err: %v", err)
 	}
 
 	fmt.Printf("slice: %+v", tbAwesomeSlice)
