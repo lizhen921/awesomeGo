@@ -1,11 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"sync"
-	"time"
-)
-
 /**
 跳转中心
 */
@@ -18,6 +12,7 @@ import (
 }
 */
 
+/*
 var Wait sync.WaitGroup
 var Counter int = 0
 
@@ -39,10 +34,47 @@ func Routine(id int) {
 	}
 	Wait.Done()
 }
+*/
 
+/*var i = 0
 
+func g() int {
+	i++
+	return i
+}
 
-//
+func main() {
+	_ = g()
+}
+*/
+
+/*type Config struct {
+	a []int
+}
+
+func main() {
+	cfg := &Config{}
+
+	go func() {
+		i := 0
+		for {
+			i++
+			cfg.a = []int{i, i + 1, i + 2, i + 3, i + 4, i + 5}
+		}
+	}()
+	var wg sync.WaitGroup
+	for n := 0; n < 4; n++ {
+		wg.Add(1)
+		go func() {
+			for n := 0; n < 100; n++ {
+				fmt.Printf("%v\n", cfg)
+			}
+			wg.Done()
+		}()
+	}
+	wg.Wait()
+}
+*/
 
 /**
 处理字符串sql
