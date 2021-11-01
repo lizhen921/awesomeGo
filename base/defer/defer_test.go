@@ -39,7 +39,7 @@ func defer3() (r int) {
 
 func defer4() {
 	fmt.Println("1")
-	defer getFunc()
+	defer getFunc()()
 	fmt.Println("3")
 	return
 }
