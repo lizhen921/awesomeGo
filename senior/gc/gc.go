@@ -8,6 +8,7 @@ import (
 	"log"
 	"os"
 	"runtime"
+	"runtime/pprof"
 	"runtime/trace"
 	"strings"
 	"sync"
@@ -33,11 +34,26 @@ type (
 )
 
 func main() {
-	// pprof.StartCPUProfile(os.Stdout)
-	// defer pprof.StopCPUProfile()
 
-	// trace.Start(os.Stdout)
-	// defer trace.Stop()
+	log.Printf("Searching Start")
+
+	//cpuf, err := os.Create("cpuprofile.prof")
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
+	//pprof.StartCPUProfile(cpuf)
+	//defer pprof.StopCPUProfile()
+	//defer cpuf.Close()
+
+	memf, err := os.Create("memprofile.prof")
+	if err != nil {
+		log.Fatal(err)
+	}
+	pprof.WriteHeapProfile(memf)
+	defer memf.Close()
+
+	//trace.Start(os.Stdout)
+	//defer trace.Stop()
 
 	docs := make([]string, 4000)
 	for i := range docs {
@@ -46,7 +62,7 @@ func main() {
 
 	topic := "president"
 	n := freq(topic, docs)
-	// n := freqConcurrent(topic, docs)
+	//n := freqConcurrent(topic, docs)
 	// n := freqConcurrentSem(topic, docs)
 	// n := freqProcessors(topic, docs)
 	// n := freqProcessorsTasks(topic, docs)
