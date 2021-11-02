@@ -41,6 +41,15 @@ func TestArrayAndSlice(t *testing.T) {
 
 }
 
+func TestSlice(t *testing.T)  {
+	slice1 := make([]int,0,0)
+
+	for i := 0; i < 2000; i++ {
+		slice1 = append(slice1, i)
+		fmt.Println("slice1: len: ", len(slice1), "\tcap: ", cap(slice1))
+	}
+
+}
 func TestJson(t *testing.T) {
 	str1 := ""
 	fmt.Println(str1)
