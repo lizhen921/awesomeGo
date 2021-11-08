@@ -5,6 +5,19 @@ import (
 	"testing"
 )
 
+func TestArrary(t *testing.T) {
+	arr := []int{1, 2, 3, 4, 5, 6}
+	fmt.Printf("%v\n", &arr)
+	for i, _ := range arr {
+		fmt.Printf("%v\n", &arr[i])
+	}
+
+	var m map[string]string
+	v, ok := m["1"]
+	fmt.Printf("%v, %v", v, ok)
+	m["1"] = "1"
+}
+
 //二分查找
 /*
 给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。
@@ -118,17 +131,4 @@ func sortedSquares(nums []int) []int {
 func TestSortedSquares(t *testing.T) {
 	nums := []int{-10, -3, 0, 3, 5, 12, 15}
 	fmt.Println(sortedSquares(nums))
-}
-
-func TestArrary(t *testing.T) {
-	arr := []int{1, 2, 3, 4, 5, 6}
-	fmt.Printf("%v\n", &arr)
-	for i, _ := range arr {
-		fmt.Printf("%v\n", &arr[i])
-	}
-
-	var m map[string]string
-	v, ok := m["1"]
-	fmt.Printf("%v, %v", v, ok)
-	m["1"] = "1"
 }
