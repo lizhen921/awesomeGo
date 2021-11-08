@@ -87,6 +87,39 @@ func TestRemoveElement(t *testing.T) {
 	fmt.Println(numsLen, nums)
 }
 
+/*
+给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序。
+
+示例 1： 输入：nums = [-4,-1,0,3,10] 输出：[0,1,9,16,100] 解释：平方后，数组变为 [16,1,0,9,100]，排序后，数组变为 [0,1,9,16,100]
+
+示例 2： 输入：nums = [-7,-3,2,3,11] 输出：[4,9,9,49,121]
+
+*/
+
+func sortedSquares(nums []int) []int {
+	numsLen := len(nums)
+	ans := make([]int, numsLen, numsLen)
+
+	a, b := 0, numsLen-1
+	for i := range ans {
+		aa, bb := nums[a]*nums[a], nums[b]*nums[b]
+
+		if aa >= bb {
+			ans[numsLen-1-i] = aa
+			a++
+		} else {
+			ans[numsLen-1-i] = bb
+			b--
+		}
+	}
+	return ans
+}
+
+func TestSortedSquares(t *testing.T) {
+	nums := []int{-10, -3, 0, 3, 5, 12, 15}
+	fmt.Println(sortedSquares(nums))
+}
+
 func TestArrary(t *testing.T) {
 	arr := []int{1, 2, 3, 4, 5, 6}
 	fmt.Printf("%v\n", &arr)
