@@ -132,3 +132,49 @@ func TestSortedSquares(t *testing.T) {
 	nums := []int{-10, -3, 0, 3, 5, 12, 15}
 	fmt.Println(sortedSquares(nums))
 }
+
+/*
+给定一个含有 n 个正整数的数组和一个正整数 target 。
+
+找出该数组中满足其和 ≥ target 的长度最小的连续子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。
+
+示例 1：
+输入：target = 7, nums = [2,3,1,2,4,3]
+输出：2
+解释：子数组 [4,3] 是该条件下的长度最小的子数组。
+
+*/
+
+func minSubArrayLen(target int, nums []int) int {
+	n := len(nums)
+
+	start := 0
+	res := 0
+	sum := 0
+
+	for end := 0; end < n; end++ {
+		sum = sum + nums[end]
+		for sum >= target {
+			tempLen := end - start + 1
+			if tempLen < res || start == 0 {
+				res = tempLen
+			}
+			sum = sum - nums[start]
+			start++
+		}
+
+	}
+	return res
+}
+
+func TestMinSubArrayLen(t *testing.T) {
+
+	nums := []int{2, 4, 3}
+
+	res := minSubArrayLen(7, nums)
+
+	fmt.Println(res)
+
+}
+
+//end
