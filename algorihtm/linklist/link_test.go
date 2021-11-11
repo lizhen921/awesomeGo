@@ -8,6 +8,7 @@ import (
 type ListNode struct {
 	Val  int
 	Next *ListNode
+	Pre  *ListNode
 }
 
 func GengrateLinkList(valList []int) *ListNode {
@@ -70,4 +71,110 @@ func TestRemoveElements(t *testing.T) {
 	PrintLinkList(head)
 	head = removeElements(head, 7)
 	PrintLinkList(head)
+}
+
+type MyLinkedList struct {
+	Head *ListNode
+	Tail *ListNode
+	Len  int
+}
+
+func Constructor() MyLinkedList {
+	return MyLinkedList{
+		Len: 0,
+	}
+}
+
+func (this *MyLinkedList) Get(index int) int {
+	if index >= this.Len {
+		return -1
+	}
+	node := this.Head
+	for i := 0; i < index; i++ {
+		node = node.Next
+	}
+	return node.Val
+}
+
+func (this *MyLinkedList) AddAtHead(val int) {
+	head := &ListNode{
+		Val: val,
+	}
+	head.Next = this.Head
+	this.Head = head
+	if this.Len == 0{
+		this.Tail = this.Head
+	}
+	this.Len++
+}
+
+func (this *MyLinkedList) AddAtTail(val int) {
+	tail := &ListNode{
+		Val: val,
+	}
+	if this.Tail == nil {
+		this.Tail = tail
+		this.Head = tail
+	} else {
+		this.Tail.Next = tail
+		this.Tail = tail
+	}
+	this.Len++
+}
+
+func (this *MyLinkedList) AddAtIndex(index int, val int) {
+	addNode := &ListNode{
+		Val: val,
+	}
+	node := this.Head
+	if index <= 0 {
+		this.AddAtHead(val)
+	} else if index == this.Len {
+		this.AddAtTail(val)
+	} else if index > this.Len {
+		return
+	} else {
+		for i := 0; i < index-1; i++ {
+			node = node.Next
+		}
+		temp := node.Next
+		node.Next = addNode
+		addNode.Next = temp
+		this.Len++
+	}
+
+}
+
+func (this *MyLinkedList) DeleteAtIndex(index int) {
+
+	if index <0 || index >= this.Len {
+		return
+	} else if index == 0 {
+		this.Head = this.Head.Next
+	} else {
+		node := this.Head
+		for i := 0; i < index-1; i++ {
+			node = node.Next
+		}
+		node.Next = node.Next.Next
+		if index == this.Len - 1 {
+			this.Tail = node
+		}
+	}
+	this.Len--
+}
+
+func TestLinkList(t *testing.T) {
+	mylist := Constructor()
+	mylist.AddAtHead(0)
+	mylist.AddAtIndex(1,4)
+	mylist.AddAtTail(8)
+	mylist.AddAtHead(5)
+	mylist.AddAtIndex(4,3)
+	mylist.AddAtTail(0)
+	mylist.AddAtTail(5)
+	mylist.AddAtIndex(6,3)
+	mylist.DeleteAtIndex(7)
+	mylist.DeleteAtIndex(5)
+	mylist.AddAtTail(4)
 }
