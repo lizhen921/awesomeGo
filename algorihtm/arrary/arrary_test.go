@@ -238,6 +238,94 @@ func TestGenerateMatrix(t *testing.T) {
 
 }
 
+/*
+最小覆盖子串 https://leetcode-cn.com/problems/minimum-window-substring/
+给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 "" 。
+*/
+func minWindow(s string, t string) string {
+
+	start := 0
+	res := ""
+
+	tMap := make(map[uint8]int)
+	for i := range t {
+		tMap[t[i]]++
+	}
+
+	subSMap := make(map[uint8]int)
+
+	for end := 0; end <= len(s); end++ {
+		if end > 0 {
+			subSMap[s[end-1]]++
+		}
+		isCon := contains(subSMap, tMap)
+
+		for isCon {
+			tempLen := end - start
+			if len(res) == 0 || len(res) > tempLen {
+				res = s[start:end]
+			}
+			subSMap[s[start]]--
+			start++
+			isCon = contains(subSMap, tMap)
+		}
+	}
+	return res
+}
+
+func contains(s map[uint8]int, t map[uint8]int) bool {
+
+	for k, v := range t {
+		if s[k] < v {
+			return false
+		}
+	}
+	return true
+}
+
+func TestMinWindow(t *testing.T) {
+	fmt.Println(minWindow1("aabbc", "bbc"))
+
+}
+
+func minWindow1(s string, t string) string {
+	resL := -1
+	resR := -1
+
+	tMap := make(map[uint8]int)
+	for i := range t {
+		tMap[t[i]]++
+	}
+	sMap := make(map[uint8]int)
+	left := 0
+
+	count := 0
+
+	//lenS := len(s)
+	for right := 0; right < len(s); right++ {
+		sMap[s[right]]++
+		if sMap[s[right]] <= tMap[s[right]] {
+			count++
+		}
+		for count >= len(t) {
+			if right-left < resR-resL || left == 0 {
+				resL = left
+				resR = right
+			}
+			sMap[s[left]]--
+			if sMap[s[left]] < tMap[s[left]] {
+				count--
+			}
+			left++
+		}
+	}
+
+	if resL == -1 {
+		return ""
+	}
+	return s[resL : resR+1]
+}
+
 //end
 /*
 
