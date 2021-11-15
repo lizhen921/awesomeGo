@@ -102,7 +102,7 @@ func (this *MyLinkedList) AddAtHead(val int) {
 	}
 	head.Next = this.Head
 	this.Head = head
-	if this.Len == 0{
+	if this.Len == 0 {
 		this.Tail = this.Head
 	}
 	this.Len++
@@ -147,7 +147,7 @@ func (this *MyLinkedList) AddAtIndex(index int, val int) {
 
 func (this *MyLinkedList) DeleteAtIndex(index int) {
 
-	if index <0 || index >= this.Len {
+	if index < 0 || index >= this.Len {
 		return
 	} else if index == 0 {
 		this.Head = this.Head.Next
@@ -157,7 +157,7 @@ func (this *MyLinkedList) DeleteAtIndex(index int) {
 			node = node.Next
 		}
 		node.Next = node.Next.Next
-		if index == this.Len - 1 {
+		if index == this.Len-1 {
 			this.Tail = node
 		}
 	}
@@ -167,14 +167,58 @@ func (this *MyLinkedList) DeleteAtIndex(index int) {
 func TestLinkList(t *testing.T) {
 	mylist := Constructor()
 	mylist.AddAtHead(0)
-	mylist.AddAtIndex(1,4)
+	mylist.AddAtIndex(1, 4)
 	mylist.AddAtTail(8)
 	mylist.AddAtHead(5)
-	mylist.AddAtIndex(4,3)
+	mylist.AddAtIndex(4, 3)
 	mylist.AddAtTail(0)
 	mylist.AddAtTail(5)
-	mylist.AddAtIndex(6,3)
+	mylist.AddAtIndex(6, 3)
 	mylist.DeleteAtIndex(7)
 	mylist.DeleteAtIndex(5)
 	mylist.AddAtTail(4)
+}
+
+/*
+两两交换链表元素
+
+给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。
+
+你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+*/
+
+func swapPairs(head *ListNode) *ListNode {
+	dummy := &ListNode{
+		Next: head,
+	}
+
+	tail := dummy
+
+	pre := dummy
+	cur := head
+	swap := false
+	for cur != nil {
+		if swap {
+			temp := cur.Next
+			cur.Next = pre
+			pre.Next = temp
+			tail.Next = cur
+			tail = pre
+			cur = tail.Next
+			swap = false
+		} else {
+			pre = pre.Next
+			cur = cur.Next
+			swap = true
+		}
+	}
+	return dummy.Next
+}
+
+func TestSwapPairs(t *testing.T) {
+	valList := []int{3, 4, 6, 1, 7, 2, 1}
+	head := GengrateLinkList(valList)
+	PrintLinkList(head)
+	head = swapPairs(head)
+	PrintLinkList(head)
 }
