@@ -180,6 +180,70 @@ func TestLinkList(t *testing.T) {
 }
 
 /*
+反转链表：
+给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。
+
+1 --> 2 --> 3 --> 4 --> 5
+
+5 --> 4 --> 3 --> 2 --> 1
+*/
+
+func reverseList(head *ListNode) *ListNode {
+
+	var pre *ListNode
+	cur := head
+	for cur.Next != nil {
+		curNext := cur.Next
+		cur.Next = pre
+		pre = cur
+		cur = curNext
+	}
+	cur.Next = pre
+
+	return cur
+}
+
+func reverseList2(head *ListNode) *ListNode {
+	var pre *ListNode
+	cur := head
+
+	for cur.Next != nil {
+		cur.Next, pre, cur = pre, cur, cur.Next
+	}
+	cur.Next = pre
+	return cur
+}
+
+func TestReverseList(t *testing.T) {
+	valList := []int{3, 4, 6, 1, 7, 2}
+	head := GengrateLinkList(valList)
+	PrintLinkList(head)
+	head = reverseList3(head)
+	PrintLinkList(head)
+
+}
+
+func reverseList3(head *ListNode) *ListNode {
+
+	if head == nil {
+		return head
+	}
+
+	var pre *ListNode
+	cur := head
+
+	for cur.Next != nil {
+		temp := cur.Next
+		cur.Next = pre
+		pre = cur
+		cur = temp
+	}
+	cur.Next = pre
+
+	return cur
+}
+
+/*
 两两交换链表元素
 
 给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。
@@ -222,3 +286,30 @@ func TestSwapPairs(t *testing.T) {
 	head = swapPairs(head)
 	PrintLinkList(head)
 }
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ */
