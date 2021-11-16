@@ -279,11 +279,23 @@ func swapPairs(head *ListNode) *ListNode {
 	return dummy.Next
 }
 
+func swappairs2(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+	tail := head.Next
+	head.Next = swappairs2(tail.Next)
+	tail.Next = head
+
+	return tail
+}
+
+
 func TestSwapPairs(t *testing.T) {
 	valList := []int{3, 4, 6, 1, 7, 2, 1}
 	head := GengrateLinkList(valList)
 	PrintLinkList(head)
-	head = swapPairs(head)
+	head = swappairs2(head)
 	PrintLinkList(head)
 }
 
