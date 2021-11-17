@@ -45,34 +45,28 @@ func maxDepth0(root *TreeNode) int {
 返回值：left right  depth<1
 */
 func isBalanceTree(root *TreeNode) bool {
-	isB,_ := isBalance(root)
+	isB, _ := isBalance(root)
 	return isB
 }
+
 //返回当前树是否平衡二叉树，和当前树的深度
-func isBalance(root *TreeNode) (bool,int) {
-	if root == nil{
-		return true,0
+func isBalance(root *TreeNode) (bool, int) {
+	if root == nil {
+		return true, 0
 	}
 
 	left, leftDepth := isBalance(root.Left)
-	right,rightDepth := isBalance(root.Right)
+	right, rightDepth := isBalance(root.Right)
 
 	depth := leftDepth
 	if leftDepth < rightDepth {
 		depth = rightDepth
 	}
 
-	return left && right && math.Abs(float64(leftDepth-rightDepth))<=1 , depth+1
+	return left && right && math.Abs(float64(leftDepth-rightDepth)) <= 1, depth + 1
 }
 
-
-//自下而上 递归
-func isBalanceTree2(root *TreeNode) bool {
-
-	return false
-}
-
-func TestIsBalance(t *testing.T)  {
+func TestIsBalance(t *testing.T) {
 	root := NewTree2()
 	isB := isBalanceTree(root)
 	fmt.Println(isB)
