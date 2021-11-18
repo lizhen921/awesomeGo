@@ -133,3 +133,57 @@ func minDepth(root *TreeNode) int {
 	}
 	return lD + 1
 }
+
+/*
+翻转一棵二叉树。
+输入：
+
+     4
+   /   \
+  2     7
+ / \   / \
+1   3 6   9
+输出：
+
+     4
+   /   \
+  7     2
+ / \   / \
+9   6 3   1
+
+*/
+func invertTree(root *TreeNode) *TreeNode {
+	if root == nil {
+		 return root
+	}
+	temp := root.Left
+	root.Left = root.Right
+	root.Right = temp
+
+	invertTree(root.Left)
+	invertTree(root.Right)
+	return root
+}
+
+func TestInvertTree(t *testing.T)  {
+	root := &TreeNode{Val: 4}
+	root.Left = CreatTreeNode(2)
+	root.Right = CreatTreeNode(7)
+
+	root.Left.Left = CreatTreeNode(1)
+	root.Left.Right = CreatTreeNode(3)
+
+	root.Right.Left = CreatTreeNode(6)
+	root.Right.Right = CreatTreeNode(9)
+
+	root = invertTree(root)
+	fmt.Println(root)
+}
+
+
+
+func CreatTreeNode(val int) *TreeNode {
+	return &TreeNode{
+		Val: val,
+	}
+}
