@@ -350,13 +350,31 @@ func remove(head *ListNode, n int) (node *ListNode, index int) {
 }
 
 func TestRemove(t *testing.T) {
-	valList := []int{1}
+	valList := []int{1, 2, 3, 4, 5, 6, 7, 8}
 	head := GengrateLinkList(valList)
 	PrintLinkList(head)
-
+	//递归
 	head = removeNthFromEnd(head, 1)
 	PrintLinkList(head)
+	head = removeNthFromEnd2(head, 4)
+	PrintLinkList(head)
+}
 
+func removeNthFromEnd2(head *ListNode, n int) *ListNode {
+	dummy := &ListNode{Next: head}
+	first := dummy
+	second := dummy
+	for i := 0; i < n; i++ {
+		first = first.Next
+	}
+	for first.Next != nil {
+		first = first.Next
+		second = second.Next
+	}
+	if second != nil && second.Next != nil {
+		second.Next = second.Next.Next
+	}
+	return dummy.Next
 }
 
 /*
