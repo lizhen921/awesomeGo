@@ -322,6 +322,44 @@ func deleteDuplicates(head *ListNode) *ListNode {
 }
 
 /*
+给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
+[1,2]
+1
+*/
+
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
+	head, index := remove(head, n)
+	if index == n {
+		head = head.Next
+	}
+	return head
+}
+
+func remove(head *ListNode, n int) (node *ListNode, index int) {
+	if head == nil {
+		return head, 0
+	}
+
+	next, index := remove(head.Next, n)
+
+	if n == index && next != nil {
+		head.Next = next.Next
+	}
+
+	return head, index + 1
+}
+
+func TestRemove(t *testing.T) {
+	valList := []int{1}
+	head := GengrateLinkList(valList)
+	PrintLinkList(head)
+
+	head = removeNthFromEnd(head, 1)
+	PrintLinkList(head)
+
+}
+
+/*
 
 
 
