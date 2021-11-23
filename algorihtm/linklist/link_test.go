@@ -429,6 +429,30 @@ func detectCycle(head *ListNode) *ListNode {
 	}
 	return nil
 }
+func detectCycle2(head *ListNode) *ListNode {
+	if head== nil || head.Next == nil{
+		return nil
+	}
+	hs := head
+	hf := head.Next
+
+	for hf != hs {
+		if hf == nil || hf.Next == nil {
+			return nil
+		}
+		hs = hs.Next
+		hf = hf.Next.Next
+	}
+
+	hf = head
+	hs = hs.Next
+	for hs != hf {
+		hf = hf.Next
+		hs = hs.Next
+	}
+	return hs
+}
+
 
 
 
