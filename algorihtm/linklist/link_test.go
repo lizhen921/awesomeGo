@@ -376,6 +376,7 @@ func removeNthFromEnd2(head *ListNode, n int) *ListNode {
 	}
 	return dummy.Next
 }
+
 /*
 给你一个链表的头节点 head ，判断链表中是否有环。
 
@@ -400,7 +401,7 @@ func hasCycle(head *ListNode) bool {
 	a := head
 	b := head.Next
 	for a != b {
-		if b == nil || b.Next == nil{
+		if b == nil || b.Next == nil {
 			return false
 		}
 		a = a.Next
@@ -420,9 +421,9 @@ func hasCycle(head *ListNode) bool {
 func detectCycle(head *ListNode) *ListNode {
 	headMap := make(map[*ListNode]int)
 	for head != nil {
-		if _,ok := headMap[head];ok {
+		if _, ok := headMap[head]; ok {
 			return head
-		}else {
+		} else {
 			headMap[head] = 1
 			head = head.Next
 		}
@@ -430,7 +431,7 @@ func detectCycle(head *ListNode) *ListNode {
 	return nil
 }
 func detectCycle2(head *ListNode) *ListNode {
-	if head== nil || head.Next == nil{
+	if head == nil || head.Next == nil {
 		return nil
 	}
 	hs := head
@@ -453,8 +454,60 @@ func detectCycle2(head *ListNode) *ListNode {
 	return hs
 }
 
+/*
+给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 null 。
 
+*/
 
+func getIntersectionNode(headA, headB *ListNode) *ListNode {
+	if headA == nil || headB == nil {
+		return nil
+	}
+	ha := headA
+	hb := headB
+
+	for ha != hb {
+		if ha == nil {
+			ha = headB
+		} else {
+			ha = ha.Next
+		}
+
+		if hb == nil {
+			hb = headA
+		} else {
+			hb = hb.Next
+		}
+	}
+	return ha
+	//[1,3,5,7]
+	//[9,11,13,15]
+	//[1,3,5,7,9,11,13,15]
+	//[9,11,13,15,1,3,5,7]
+}
+
+/*
+
+0
+[1,3,5,7,9,11,13,15,17,19,21]
+[2]
+11
+1
+*/
+
+func TestGetIntersectionNode(t *testing.T) {
+	valList := []int{1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21}
+	headA := GengrateLinkList(valList)
+	PrintLinkList(headA)
+
+	valList = []int{2}
+	headB := GengrateLinkList(valList)
+	PrintLinkList(headB)
+
+	node := getIntersectionNode(headA, headB)
+	PrintLinkList(node)
+
+}
 
 /*
 
