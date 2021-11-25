@@ -153,7 +153,6 @@ func TestIsHappy(t *testing.T) {
 	fmt.Println(isHappy(19))
 }
 
-
 /*
 给你四个整数数组 nums1、nums2、nums3 和 nums4 ，数组长度都是 n ，请你计算有多少个元组 (i, j, k, l) 能满足：
 
@@ -177,28 +176,29 @@ func TestIsHappy(t *testing.T) {
 */
 func fourSumCount(nums1 []int, nums2 []int, nums3 []int, nums4 []int) int {
 	sumMap := make(map[int]int)
-	for _,i := range nums1{
-		for _,j := range nums2{
-			sumMap[i+j] ++
+	for _, i := range nums1 {
+		for _, j := range nums2 {
+			sumMap[i+j]++
 		}
 	}
 	count := 0
-	for _,k := range nums3{
-		for _,l := range nums4{
-			if _, ok := sumMap[-(k+l)]; ok{
-				count += sumMap[-(k+l)]
+	for _, k := range nums3 {
+		for _, l := range nums4 {
+			if _, ok := sumMap[-(k + l)]; ok {
+				count += sumMap[-(k + l)]
 			}
 		}
 	}
 	return count
 }
-func TestFourSumCount(t *testing.T)  {
-	num1 := []int{-1,-1}
-	num2 := []int{-1,1}
-	num3 := []int{-1,1}
-	num4 := []int{1,-1}
-	fmt.Println(fourSumCount(num1,num2,num3,num4))
+func TestFourSumCount(t *testing.T) {
+	num1 := []int{-1, -1}
+	num2 := []int{-1, 1}
+	num3 := []int{-1, 1}
+	num4 := []int{1, -1}
+	fmt.Println(fourSumCount(num1, num2, num3, num4))
 }
+
 /*
 给定一个整数数组nums和一个整数目标值target，请你在该数组中找出 和为目标值target的那两个整数，并返回它们的数组下标。
 
@@ -261,20 +261,74 @@ magazine 中的每个字符只能在 ransomNote 中使用一次。
 
 */
 func canConstruct(ransomNote string, magazine string) bool {
-	if len(ransomNote) > len(magazine){
+	if len(ransomNote) > len(magazine) {
 		return false
 	}
 	magMap := make(map[rune]int)
-	for _,v := range magazine{
+	for _, v := range magazine {
 		magMap[v]++
 	}
 
-	for _,v := range ransomNote{
-		if m,ok := magMap[v];ok && m > 0 {
-			magMap[v] --
-		}else {
+	for _, v := range ransomNote {
+		if m, ok := magMap[v]; ok && m > 0 {
+			magMap[v]--
+		} else {
 			return false
 		}
 	}
 	return true
+}
+
+/*
+给你一个包含 n 个整数的数组nums，判断nums中是否存在三个元素 a，b，c ，使得a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
+
+注意：答案中不可以包含重复的三元组。
+
+示例 1：
+
+输入：nums = [-1,0,1,2,-1,-4]
+输出：[[-1,-1,2],[-1,0,1]]
+示例 2：
+
+输入：nums = []
+输出：[]
+示例 3：
+
+输入：nums = [0]
+输出：[]
+
+*/
+
+func threeSum(nums []int) [][]int {
+	sort.Ints(nums)
+	res := make([][]int, 0, 0)
+	for i := 0; i < len(nums)-2; i++ {
+		n1 := nums[i]
+		if n1 > 0{
+			break
+		}
+		if i > 0 && n1 == nums[i-1] {
+			continue
+		}
+		spoint := i + 1
+		epoint := len(nums) - 1
+		for spoint < epoint {
+			n2 := nums[spoint]
+			n3 := nums[epoint]
+			if n1+n2+n3 == 0 {
+				res = append(res, []int{n1, n2, n3})
+				for spoint < epoint && nums[spoint] == n2 {
+					spoint++
+				}
+				for spoint < epoint && nums[epoint] == n3 {
+					epoint--
+				}
+			} else if n1+n2+n3 > 0 {
+				epoint--
+			} else {
+				spoint++
+			}
+		}
+	}
+	return res
 }
