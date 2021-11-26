@@ -106,3 +106,39 @@ func reverseStr(s string, k int) string {
 	}
 	return string(sByte)
 }
+
+/*
+替换字符串   %20
+*/
+func replaceSpace(s string) string {
+	count := 0
+	for _, v := range s {
+		if v == ' ' {
+			count++
+		}
+	}
+	if count == 0 {
+		return s
+	}
+	l := 2 * count
+	temp := make([]byte, l)
+	b := []byte(s)
+	b = append(b, temp...)
+
+	sIndex := len(s) - 1
+	for i := len(b) - 1; i > 0; {
+		if s[sIndex] == ' ' {
+			b[i] = '0'
+			b[i-1] = '2'
+			b[i-2] = '%'
+			i -= 3
+			sIndex--
+		} else {
+			b[i] = s[sIndex]
+			i--
+			sIndex--
+		}
+
+	}
+	return string(b)
+}
