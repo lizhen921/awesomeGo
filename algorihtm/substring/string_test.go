@@ -5,6 +5,7 @@ import (
 	"sort"
 	"strings"
 	"testing"
+	"time"
 )
 
 /*
@@ -196,4 +197,49 @@ func TestA(t *testing.T) {
 	s := "the sky is blue"
 	fmt.Println(reverseWords(s))
 
+}
+
+/*
+字符串的左旋转操作是把字符串前面的若干个字符转移到字符串的尾部。
+请定义一个函数实现字符串左旋转操作的功能。
+比如，输入字符串"abcdefg"和数字2，该函数将返回左旋转两位得到的结果"cdefgab"。
+
+示例 1：
+
+输入: s = "abcdefg", k = 2
+输出: "cdefgab"
+
+示例 2：
+
+输入: s = "lrlose  umgh", k = 6
+输出: "umghlrlose"
+
+*/
+func reverseLeftWords(s string, n int) string {
+	strB := []byte(s)
+	reverseString(strB)
+
+	b1 := strB[:len(strB)-n]
+	b2 := strB[len(strB)-n:]
+	reverseString(b1)
+	reverseString(b2)
+	return string(strB)
+}
+
+func reverseLeftWords1(s string, n int) string {
+	strB := make([]byte, len(s))
+	time.Sleep(time.Millisecond * 10)
+	for i := 0; i < len(s); i++ {
+		if i < n {
+			strB[len(s)-n+i] = s[i]
+		} else {
+			strB[i-n] = s[i]
+		}
+	}
+	return string(strB)
+}
+
+func TestReverseLeftWords(t *testing.T) {
+
+	fmt.Println(reverseLeftWords1("lrloseumgh", 6))
 }
