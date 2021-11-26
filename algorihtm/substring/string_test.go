@@ -1,8 +1,10 @@
 package substring
 
 import (
+	"fmt"
 	"sort"
 	"strings"
+	"testing"
 )
 
 /*
@@ -46,4 +48,24 @@ func isAnagram2(s string, t string) bool {
 		}
 	}
 	return true
+}
+
+/*
+反转字符串
+*/
+func reverseString(s []byte) {
+	i := 0
+	j := len(s) - 1
+	for i < j {
+		s[i], s[j] = s[j], s[i]
+		i++
+		j--
+	}
+}
+
+func TestReverseString(t *testing.T) {
+	s := []byte{'h', 'e', 'l', 'l', 'o'}
+	fmt.Printf("%s\n", s)
+	reverseString(s)
+	fmt.Printf("%s", s)
 }
