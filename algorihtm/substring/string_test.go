@@ -290,3 +290,42 @@ func strStr(haystack string, needle string) int {
 	}
 	return -1
 }
+
+//寻找next数组，next的含义是
+func getNext(next []int, str string) {
+	j := 0
+	next[0] = j
+
+	for i := 1; i < len(str); i++ {
+		for str[i] != str[j] && j > 0 {
+			j = next[j-1]
+		}
+		if str[i] == str[j] {
+			j++
+		}
+		next[i] = j
+	}
+
+}
+
+func strStr2(haystack string, needle string) int {
+	n := len(needle)
+	if n == 0 {
+		return 0
+	}
+	j := 0
+	next := make([]int, n)
+	getNext(next, needle)
+	for i := 0; i < len(haystack); i++ {
+		for j > 0 && haystack[i] != needle[j] {
+			j = next[j-1] // 回退到j的前一位
+		}
+		if haystack[i] == needle[j] {
+			j++
+		}
+		if j == n {
+			return i - n + 1
+		}
+	}
+	return -1
+}
