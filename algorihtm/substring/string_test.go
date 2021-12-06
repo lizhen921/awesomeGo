@@ -329,3 +329,24 @@ func strStr2(haystack string, needle string) int {
 	}
 	return -1
 }
+
+/*
+重复的子字符串
+
+输入: "abcabcabcabc"
+
+输出: True
+
+解释: 可由子字符串 "abc" 重复四次构成。 (或者子字符串 "abcabc" 重复两次构成。)
+
+aabaab
+
+
+*/
+
+func repeatedSubstringPattern(s string) bool {
+	if len(s) <= 0 {
+		return false
+	}
+
+}
