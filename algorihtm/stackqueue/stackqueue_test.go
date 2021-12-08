@@ -195,3 +195,45 @@ func evalRPN(tokens []string) int {
 func TestEvalRpn(t *testing.T) {
 	evalRPN([]string{"4", "13", "5", "/", "+"})
 }
+
+/*
+滑动窗口最大值
+*/
+
+func maxSlidingWindow(nums []int, k int) []int {
+	l := len(nums)
+	if l <= 1 || k == 1 {
+		return nums
+	}
+	maxIndex := make([]int, 0)
+
+	res := make([]int, 0)
+	j := 0
+
+	for i := 0; i < l; i++ {
+		if len(maxIndex) == 0 || nums[maxIndex[len(maxIndex)-1]] > nums[i] {
+			maxIndex = append(maxIndex, i)
+		} else {
+			for len(maxIndex) > 0 && nums[maxIndex[len(maxIndex)-1]] < nums[i] {
+				maxIndex = maxIndex[:len(maxIndex)-1]
+			}
+			maxIndex = append(maxIndex, i)
+		}
+		if i+1 >= k {
+			if len(maxIndex) > 0 {
+				res = append(res, nums[maxIndex[0]])
+				if maxIndex[0] == j {
+					maxIndex = maxIndex[1:]
+				}
+			}
+			j++
+		}
+
+	}
+	return res
+}
+
+func TestMax(t *testing.T) {
+	nums := []int{-6, -10, -7, -1, -9, 9, -8, -4, 10, -5, 2, 9, 0, -7, 7, 4, -2, -10, 8, 7}
+	maxSlidingWindow(nums, 7)
+}
