@@ -1,6 +1,7 @@
 package stack
 
 import (
+	"sort"
 	"strconv"
 	"testing"
 )
@@ -236,4 +237,27 @@ func maxSlidingWindow(nums []int, k int) []int {
 func TestMax(t *testing.T) {
 	nums := []int{-6, -10, -7, -1, -9, 9, -8, -4, 10, -5, 2, 9, 0, -7, 7, 4, -2, -10, 8, 7}
 	maxSlidingWindow(nums, 7)
+}
+
+/*
+前 K 个高频元素
+给你一个整数数组 nums 和一个整数 k ，请你返回其中出现频率前 k 高的元素。你可以按 任意顺序 返回答案。
+*/
+
+func topKFrequent(nums []int, k int) []int {
+	numsMap := make(map[int]int)
+
+	value := make([]int, 0)
+	for _, v := range nums {
+		numsMap[v]++
+		if numsMap[v] == 1 {
+			value = append(value, v)
+		}
+	}
+
+	sort.Slice(value, func(i, j int) bool {
+		return numsMap[value[i]] > numsMap[value[j]]
+	})
+
+	return value[:k]
 }
