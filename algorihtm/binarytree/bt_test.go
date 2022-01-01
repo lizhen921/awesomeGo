@@ -115,6 +115,53 @@ func levelOrderBtree(root *TreeNode) [][]int {
 	return res
 }
 
+func reverseTree(root *TreeNode) *TreeNode {
+	nodeList := make([]*TreeNode, 0)
+	node := root
+	nodeList = append(nodeList, node)
+
+	num := 1
+	for len(nodeList) != 0 {
+		for i := 0; i < num; i++ {
+			node = nodeList[0]
+			nodeList = nodeList[1:]
+			if node == nil {
+				continue
+			}
+			if node.Left != nil || node.Right != nil {
+				node.Left, node.Right = node.Right, node.Left
+				nodeList = append(nodeList, node.Left)
+				nodeList = append(nodeList, node.Right)
+				num += 2
+			}
+		}
+	}
+	return root
+}
+
+func reverseTree2(root *TreeNode) *TreeNode {
+	stack := make([]*TreeNode, 0)
+	node := root
+
+	for node != nil {
+		stack = append(stack, node)
+		node = node.Left
+	}
+
+	for len(stack) != 0 {
+		node = stack[len(stack)-1]
+		node.Left, node.Right = node.Right, node.Left
+		stack = stack[:len(stack)-1]
+
+		node = node.Left
+		for node != nil {
+			stack = append(stack, node)
+			node = node.Left
+		}
+	}
+	return root
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	root.Right = CreatTreeNode(2)
