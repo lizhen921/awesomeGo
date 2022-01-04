@@ -228,7 +228,7 @@ func SameValue(left, right *TreeNode) bool {
 	return leftEqual && rightEqual && (left.Val == right.Val)
 }
 
-//最大深度，最小深度
+//最大深度，
 func MaxDepth001(root *TreeNode) int {
 	if root == nil {
 		return 0
@@ -261,6 +261,23 @@ func MaxDepth001(root *TreeNode) int {
 	return depth
 }
 
+func MaxDepth002(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	leftDepth := MaxDepth002(root.Left)
+	rightDepth := MaxDepth002(root.Right)
+	return max(leftDepth, rightDepth) + 1
+}
+
+func max(a, b int) int {
+	if a >= b {
+		return a
+	}
+	return b
+}
+
+//最小深度
 func MinDepth001(root *TreeNode) int {
 	if root == nil {
 		return 0
@@ -298,6 +315,31 @@ func MinDepth001(root *TreeNode) int {
 
 	return depth
 }
+
+func MinDepth002(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	if root.Left == nil && root.Right == nil {
+		return 0
+	}
+	leftDepth := MinDepth002(root.Left)
+	rightDepth := MinDepth002(root.Right)
+
+	if root.Left == nil || root.Right == nil {
+
+		return max(leftDepth, rightDepth) + 1
+	}
+	return min(leftDepth, rightDepth) + 1
+}
+
+func min(a, b int) int {
+	if a >= b {
+		return b
+	}
+	return a
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	root.Left = CreatTreeNode(2)
