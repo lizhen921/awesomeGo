@@ -162,11 +162,60 @@ func reverseTree2(root *TreeNode) *TreeNode {
 	return root
 }
 
+//递归 对称二叉树
+func isSymmetric001(root *TreeNode) bool {
+	leftStack := make([]*TreeNode, 0)
+	rightStack := make([]*TreeNode, 0)
+	left, right := root, root
+
+	for left != nil || right != nil {
+		if left == nil || right == nil {
+			return false
+		}
+		leftStack = append(leftStack, left)
+		rightStack = append(rightStack, right)
+		if left.Val != right.Val {
+			return false
+		}
+		left = left.Left
+		right = right.Right
+	}
+
+	for len(leftStack) != 0 && len(rightStack) != 0 {
+		left = leftStack[len(leftStack)-1]
+		right = rightStack[len(rightStack)-1]
+		leftStack = leftStack[:len(leftStack)-1]
+		rightStack = rightStack[:len(rightStack)-1]
+		left = left.Right
+		right = right.Left
+		for left != nil || right != nil {
+			if left == nil || right == nil {
+				return false
+			}
+			leftStack = append(leftStack, left)
+			rightStack = append(rightStack, right)
+			if left.Val != right.Val {
+				return false
+			}
+			left = left.Left
+			right = right.Right
+		}
+	}
+
+	return true
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
-	root.Right = CreatTreeNode(2)
-	root.Right.Left = CreatTreeNode(3)
+	root.Left = CreatTreeNode(2)
+	root.Left.Left = CreatTreeNode(3)
+	root.Left.Right = CreatTreeNode(4)
 
+	root.Right = CreatTreeNode(2)
+	root.Right.Right = CreatTreeNode(3)
+	root.Right.Left = CreatTreeNode(4)
+
+	isSymmetric001(root)
 	//res := preBinaryTree(root)
 	//fmt.Println(res)
 	//res = inBinaryTree(root)
