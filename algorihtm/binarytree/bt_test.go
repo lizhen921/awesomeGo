@@ -228,6 +228,76 @@ func SameValue(left, right *TreeNode) bool {
 	return leftEqual && rightEqual && (left.Val == right.Val)
 }
 
+//最大深度，最小深度
+func MaxDepth001(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	depth := 0
+	nodeList := make([]*TreeNode, 0)
+	nodeList = append(nodeList, root)
+	levelCount := 1
+	for len(nodeList) != 0 {
+		tempCount := 0
+		for i := 0; i < levelCount; i++ {
+			node := nodeList[0]
+			nodeList = nodeList[1:]
+
+			if node.Left != nil {
+				nodeList = append(nodeList, node.Left)
+				tempCount++
+			}
+
+			if node.Right != nil {
+				nodeList = append(nodeList, node.Right)
+				tempCount++
+			}
+
+		}
+		levelCount = tempCount
+		depth++
+	}
+
+	return depth
+}
+
+func MinDepth001(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	depth := 0
+	nodeList := make([]*TreeNode, 0)
+	nodeList = append(nodeList, root)
+	levelCount := 1
+	for len(nodeList) != 0 {
+		depth++
+
+		tempCount := 0
+		for i := 0; i < levelCount; i++ {
+			node := nodeList[0]
+			nodeList = nodeList[1:]
+
+			if node.Left == nil && node.Right == nil {
+				return depth
+			}
+
+			if node.Left != nil {
+				nodeList = append(nodeList, node.Left)
+				tempCount++
+			}
+
+			if node.Right != nil {
+				nodeList = append(nodeList, node.Right)
+				tempCount++
+			}
+
+		}
+		levelCount = tempCount
+
+	}
+
+	return depth
+}
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	root.Left = CreatTreeNode(2)
