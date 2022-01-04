@@ -162,7 +162,7 @@ func reverseTree2(root *TreeNode) *TreeNode {
 	return root
 }
 
-//递归 对称二叉树
+//迭代 对称二叉树
 func isSymmetric001(root *TreeNode) bool {
 	leftStack := make([]*TreeNode, 0)
 	rightStack := make([]*TreeNode, 0)
@@ -203,6 +203,29 @@ func isSymmetric001(root *TreeNode) bool {
 	}
 
 	return true
+}
+
+//递归 对称二叉树
+func isSymmetric002(root *TreeNode) bool {
+	if root == nil {
+		return true
+	}
+	left, right := root.Left, root.Right
+	return SameValue(left, right)
+}
+
+func SameValue(left, right *TreeNode) bool {
+	if left == nil && right == nil {
+		return true
+	}
+
+	if left == nil || right == nil {
+		return false
+	}
+
+	leftEqual := SameValue(left.Left, right.Right)
+	rightEqual := SameValue(left.Right, right.Left)
+	return leftEqual && rightEqual && (left.Val == right.Val)
 }
 
 func TestInBinaryTree(t *testing.T) {
