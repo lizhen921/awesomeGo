@@ -1,6 +1,7 @@
 package binarytree
 
 import (
+	"math"
 	"testing"
 )
 
@@ -338,6 +339,32 @@ func min(a, b int) int {
 		return b
 	}
 	return a
+}
+
+//左右差不超过1
+func isBalanced(root *TreeNode) bool {
+	if root == nil {
+		return true
+	}
+
+	isB, _ := isBalancedChild(root)
+
+	return isB
+
+}
+
+func isBalancedChild(root *TreeNode) (bool, int) {
+	if root == nil {
+		return true, 0
+	}
+	isLeftBalanced, depthLeft := isBalancedChild(root.Left)
+	isRightBalanced, depthRight := isBalancedChild(root.Right)
+
+	depth := depthLeft
+	if depthRight > depthLeft {
+		depth = depthRight
+	}
+	return isLeftBalanced && isRightBalanced && math.Abs(float64(depthLeft-depthRight)) <= 1, depth + 1
 }
 
 func TestInBinaryTree(t *testing.T) {
