@@ -480,6 +480,22 @@ func sumOfLeftLeaves(root *TreeNode) int {
 	return sum
 }
 
+//路径之和
+func hasPathSum001(root *TreeNode, targetSum int) bool {
+	if root == nil {
+		return false
+
+	}
+	if root.Left == nil && root.Right == nil && targetSum == 0 {
+		return true
+	}
+
+	isLeft := hasPathSum001(root.Left, targetSum-root.Val)
+	isRight := hasPathSum001(root.Right, targetSum-root.Val)
+
+	return isLeft || isRight
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	root.Left = CreatTreeNode(2)
