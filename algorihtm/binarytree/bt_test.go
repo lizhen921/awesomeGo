@@ -440,6 +440,46 @@ func buildPath(root *TreeNode, pathStr string, paths *[]string) {
 	buildPath(root.Right, pathStr, paths)
 }
 
+//左叶子之和
+func sumOfLeftLeaves(root *TreeNode) int {
+	if root == nil || (root.Left == nil && root.Right == nil) {
+		return 0
+	}
+	sum := 0
+	stack := make([]*TreeNode, 0)
+	isLeftNode := make([]bool, 0)
+	for root != nil {
+		stack = append(stack, root)
+		isLeftNode = append(isLeftNode, true)
+		root = root.Left
+	}
+
+	for len(stack) != 0 {
+		root = stack[len(stack)-1]
+		isLeft := isLeftNode[len(stack)-1]
+
+		stack = stack[:len(stack)-1]
+		isLeftNode = isLeftNode[:len(isLeftNode)-1]
+
+		if isLeft && root.Left == nil && root.Right == nil {
+			sum += root.Val
+		}
+
+		root = root.Right
+		if root != nil {
+			stack = append(stack, root)
+			isLeftNode = append(isLeftNode, false)
+			root = root.Left
+		}
+		for root != nil {
+			stack = append(stack, root)
+			isLeftNode = append(isLeftNode, true)
+			root = root.Left
+		}
+	}
+	return sum
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	root.Left = CreatTreeNode(2)
