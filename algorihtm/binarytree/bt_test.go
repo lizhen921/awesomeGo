@@ -370,7 +370,7 @@ func isBalancedChild(root *TreeNode) (bool, int) {
 }
 
 //路径
-func binaryTreePaths(root *TreeNode) []string {
+func binaryTreePaths001(root *TreeNode) []string {
 	paths := make([]string, 0)
 
 	queue := make([]*TreeNode, 0)
@@ -410,6 +410,36 @@ func binaryTreePaths(root *TreeNode) []string {
 	return paths
 }
 
+//路径
+func binaryTreePaths002(root *TreeNode) []string {
+	res := make([]string, 0)
+	if root == nil {
+		return res
+	}
+	buildPath(root.Left, strconv.Itoa(root.Val), &res)
+
+	buildPath(root.Right, strconv.Itoa(root.Val), &res)
+
+	return res
+}
+
+func buildPath(root *TreeNode, pathStr string, paths *[]string) {
+	if root == nil {
+		return
+	}
+
+	if root.Left == nil && root.Right == nil {
+		pathStr = pathStr + "->" + strconv.Itoa(root.Val)
+		*paths = append(*paths, pathStr)
+		return
+	}
+
+	pathStr = pathStr + "->" + strconv.Itoa(root.Val)
+
+	buildPath(root.Left, pathStr, paths)
+	buildPath(root.Right, pathStr, paths)
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	root.Left = CreatTreeNode(2)
@@ -427,5 +457,5 @@ func TestInBinaryTree(t *testing.T) {
 	//fmt.Println(res)
 	//res = postBinaryTree(root)
 	//fmt.Println(res)
-	fmt.Println(binaryTreePaths(root))
+	fmt.Println(binaryTreePaths002(root))
 }
