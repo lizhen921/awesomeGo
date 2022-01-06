@@ -1,7 +1,9 @@
 package binarytree
 
 import (
+	"fmt"
 	"math"
+	"strconv"
 	"testing"
 )
 
@@ -367,6 +369,47 @@ func isBalancedChild(root *TreeNode) (bool, int) {
 	return isLeftBalanced && isRightBalanced && math.Abs(float64(depthLeft-depthRight)) <= 1, depth + 1
 }
 
+//路径
+func binaryTreePaths(root *TreeNode) []string {
+	paths := make([]string, 0)
+
+	queue := make([]*TreeNode, 0)
+	queuePath := make([]string, 0)
+
+	queue = append(queue, root)
+	queuePath = append(queuePath, strconv.Itoa(root.Val))
+
+	num := 1
+	for len(queue) != 0 {
+		tempNum := num
+		num = 0
+
+		for i := 0; i < tempNum; i++ {
+			root := queue[0]
+			rootPath := queuePath[0]
+
+			queue = queue[1:]
+			queuePath = queuePath[1:]
+
+			if root.Left != nil {
+				queue = append(queue, root.Left)
+				queuePath = append(queuePath, rootPath+"->"+strconv.Itoa(root.Left.Val))
+				num++
+			}
+
+			if root.Right != nil {
+				queue = append(queue, root.Right)
+				queuePath = append(queuePath, rootPath+"->"+strconv.Itoa(root.Right.Val))
+				num++
+			}
+			if root.Left == nil && root.Right == nil {
+				paths = append(paths, rootPath)
+			}
+		}
+	}
+	return paths
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	root.Left = CreatTreeNode(2)
@@ -384,4 +427,5 @@ func TestInBinaryTree(t *testing.T) {
 	//fmt.Println(res)
 	//res = postBinaryTree(root)
 	//fmt.Println(res)
+	fmt.Println(binaryTreePaths(root))
 }
