@@ -496,11 +496,48 @@ func hasPathSum001(root *TreeNode, targetSum int) bool {
 	return isLeft || isRight
 }
 
+func hasPathSum002(root *TreeNode, targetSum int) bool {
+	stack := make([]*TreeNode, 0)
+	tempSumStack := make([]int, 0)
+
+	tempFather := 0
+	for root != nil {
+		stack = append(stack, root)
+		tempSumStack = append(tempSumStack, tempFather+root.Val)
+		if root.Left == nil && root.Right == nil && tempFather+root.Val == targetSum {
+			return true
+		}
+		tempFather = tempFather + root.Val
+		root = root.Left
+	}
+
+	for len(stack) != 0 {
+		root = stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		tempFather = tempSumStack[len(tempSumStack)-1]
+		tempSumStack = tempSumStack[:len(tempSumStack)-1]
+
+		root = root.Right
+		for root != nil {
+			stack = append(stack, root)
+			tempSumStack = append(tempSumStack, tempFather+root.Val)
+			if root.Left == nil && root.Right == nil && tempFather+root.Val == targetSum {
+				return true
+			}
+			root = root.Left
+		}
+	}
+
+	return false
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	root.Left = CreatTreeNode(2)
 	root.Left.Left = CreatTreeNode(3)
 	root.Left.Right = CreatTreeNode(4)
+	root.Left.Right.Left = CreatTreeNode(5)
+	root.Left.Right.Right = CreatTreeNode(6)
 
 	root.Right = CreatTreeNode(2)
 	root.Right.Right = CreatTreeNode(3)
@@ -514,4 +551,6 @@ func TestInBinaryTree(t *testing.T) {
 	//res = postBinaryTree(root)
 	//fmt.Println(res)
 	fmt.Println(binaryTreePaths002(root))
+
+	hasPathSum002(root, 13)
 }
