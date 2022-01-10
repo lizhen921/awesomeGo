@@ -1,7 +1,6 @@
 package binarytree
 
 import (
-	"fmt"
 	"math"
 	"strconv"
 	"testing"
@@ -531,6 +530,41 @@ func hasPathSum002(root *TreeNode, targetSum int) bool {
 	return false
 }
 
+/*
+给定一个不含重复元素的整数数组 nums 。一个以此数组直接递归构建的 最大二叉树 定义如下：
+
+二叉树的根是数组 nums 中的最大元素。
+左子树是通过数组中 最大值左边部分 递归构造出的最大二叉树。
+右子树是通过数组中 最大值右边部分 递归构造出的最大二叉树。
+返回有给定数组 nums 构建的 最大二叉树 。
+
+*/
+
+func constructMaximumBinaryTree001(nums []int) *TreeNode {
+	if len(nums) == 0 {
+		return nil
+	}
+	index := getMax(nums)
+	root := &TreeNode{Val: nums[index]}
+	root.Left = constructMaximumBinaryTree001(nums[:index])
+	root.Right = constructMaximumBinaryTree001(nums[index+1:])
+
+	return root
+}
+
+func getMax(nums []int) int {
+	index := 0
+	max := nums[0]
+
+	for i, v := range nums {
+		if max < v {
+			index = i
+			max = v
+		}
+	}
+	return index
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	root.Left = CreatTreeNode(2)
@@ -543,14 +577,16 @@ func TestInBinaryTree(t *testing.T) {
 	root.Right.Right = CreatTreeNode(3)
 	root.Right.Left = CreatTreeNode(4)
 
-	isSymmetric001(root)
+	//isSymmetric001(root)
 	//res := preBinaryTree(root)
 	//fmt.Println(res)
 	//res = inBinaryTree(root)
 	//fmt.Println(res)
 	//res = postBinaryTree(root)
 	//fmt.Println(res)
-	fmt.Println(binaryTreePaths002(root))
+	//fmt.Println(binaryTreePaths002(root))
 
-	hasPathSum002(root, 13)
+	//hasPathSum002(root, 13)
+
+	constructMaximumBinaryTree001([]int{3, 2, 1, 6, 0, 5})
 }
