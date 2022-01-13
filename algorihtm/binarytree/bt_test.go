@@ -608,9 +608,9 @@ func buildTree002(inorder []int, postorder []int) *TreeNode {
 
 	index := getIndex(postorder[len(postorder)-1], inorder)
 
-	root := &TreeNode{Val: postorder[0]}
-	root.Left = buildTree001(postorder[:index+1], inorder[:index])
-	root.Right = buildTree001(postorder[index+1:len(postorder)-1], inorder[index+1:])
+	root := &TreeNode{Val: postorder[len(postorder)-1]}
+	root.Left = buildTree002(inorder[:index], postorder[:index])
+	root.Right = buildTree002(inorder[index+1:], postorder[index:len(postorder)-1])
 
 	return root
 }
