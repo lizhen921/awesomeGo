@@ -647,6 +647,19 @@ func searchBST001(root *TreeNode, val int) *TreeNode {
 	return searchBST001(root, val)
 }
 
+func searchBST002(root *TreeNode, val int) *TreeNode {
+
+	for root != nil && root.Val != val {
+		if root.Val > val {
+			root = root.Left
+		} else {
+			root = root.Right
+		}
+	}
+	return root
+
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	root.Left = CreatTreeNode(2)
