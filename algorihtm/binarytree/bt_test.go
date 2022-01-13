@@ -615,6 +615,23 @@ func buildTree002(inorder []int, postorder []int) *TreeNode {
 	return root
 }
 
+func mergeTrees001(root1 *TreeNode, root2 *TreeNode) *TreeNode {
+
+	root := &TreeNode{}
+
+	if root1 == nil {
+		return root2
+	}
+	if root2 == nil {
+		return root1
+	}
+	root.Val = root1.Val + root2.Val
+	root.Left = mergeTrees001(root1.Left, root2.Left)
+	root.Right = mergeTrees001(root1.Right, root2.Right)
+
+	return root
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	root.Left = CreatTreeNode(2)
