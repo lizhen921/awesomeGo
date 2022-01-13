@@ -565,6 +565,56 @@ func getMax(nums []int) int {
 	return index
 }
 
+/*
+preorder = [3,9,20,15,7]  中左右 [1,2]
+inorder = [9,3,15,20,7]   左中右 [1,2]
+
+Output: [3,9,20,null,null,15,7]
+
+*/
+func buildTree001(preorder []int, inorder []int) *TreeNode {
+	if len(preorder) == 0 {
+		return nil
+	}
+
+	index := getIndex(preorder[0], inorder)
+
+	root := &TreeNode{Val: preorder[0]}
+	root.Left = buildTree001(preorder[1:index+1], inorder[:index])
+	root.Right = buildTree001(preorder[index+1:], inorder[index+1:])
+
+	return root
+}
+
+func getIndex(value int, inorder []int) int {
+	for i, v := range inorder {
+		if v == value {
+			return i
+		}
+	}
+	return 0
+}
+
+/*
+inorder = [9,3,15,20,7] 左中右
+postorder = [9,15,7,20,3] 左右中
+
+Output: [3,9,20,null,null,15,7]
+*/
+func buildTree002(inorder []int, postorder []int) *TreeNode {
+	if len(postorder) == 0 {
+		return nil
+	}
+
+	index := getIndex(postorder[len(postorder)-1], inorder)
+
+	root := &TreeNode{Val: postorder[0]}
+	root.Left = buildTree001(postorder[:index+1], inorder[:index])
+	root.Right = buildTree001(postorder[index+1:len(postorder)-1], inorder[index+1:])
+
+	return root
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	root.Left = CreatTreeNode(2)
@@ -588,5 +638,6 @@ func TestInBinaryTree(t *testing.T) {
 
 	//hasPathSum002(root, 13)
 
-	constructMaximumBinaryTree001([]int{3, 2, 1, 6, 0, 5})
+	//constructMaximumBinaryTree001([]int{3, 2, 1, 6, 0, 5})
+	buildTree001([]int{1, 2}, []int{1, 2})
 }
