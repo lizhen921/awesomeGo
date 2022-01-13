@@ -660,6 +660,52 @@ func searchBST002(root *TreeNode, val int) *TreeNode {
 
 }
 
+func isValidBST001(root *TreeNode) bool {
+	var preVal int
+	stack := make([]*TreeNode, 0)
+	for root != nil {
+		preVal = root.Val - 1
+		stack = append(stack, root)
+		root = root.Left
+	}
+
+	for len(stack) != 0 {
+		root = stack[len(stack)-1]
+		if root.Val <= preVal {
+			return false
+		}
+		preVal = root.Val
+		stack = stack[:len(stack)-1]
+
+		root = root.Right
+		for root != nil {
+			stack = append(stack, root)
+			root = root.Left
+		}
+	}
+
+	return false
+}
+
+func isValidBST002(root *TreeNode) bool {
+	var pre *TreeNode
+	return isV(root, pre)
+}
+
+func isV(root *TreeNode, pre *TreeNode) bool {
+	if root == nil {
+		return true
+	}
+	isL := isV(root.Left, pre)
+
+	if pre != nil && root.Val < pre.Val {
+		return false
+	}
+	pre = root
+	isR := isV(root.Right, pre)
+
+	return isL && isR
+}
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	root.Left = CreatTreeNode(2)
