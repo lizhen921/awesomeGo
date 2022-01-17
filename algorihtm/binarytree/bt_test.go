@@ -687,36 +687,17 @@ func isValidBST001(root *TreeNode) bool {
 	return false
 }
 
-func isValidBST002(root *TreeNode) bool {
-	var pre *TreeNode
-	return isV(root, pre)
-}
-
-func isV(root *TreeNode, pre *TreeNode) bool {
-	if root == nil {
-		return true
-	}
-	isL := isV(root.Left, pre)
-
-	if pre != nil && root.Val < pre.Val {
-		return false
-	}
-	pre = root
-	isR := isV(root.Right, pre)
-
-	return isL && isR
-}
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
-	root.Left = CreatTreeNode(2)
-	root.Left.Left = CreatTreeNode(3)
-	root.Left.Right = CreatTreeNode(4)
-	root.Left.Right.Left = CreatTreeNode(5)
-	root.Left.Right.Right = CreatTreeNode(6)
+	root.Left = CreatTreeNode(1)
+	//root.Left.Left = CreatTreeNode(3)
+	//root.Left.Right = CreatTreeNode(4)
+	//root.Left.Right.Left = CreatTreeNode(5)
+	//root.Left.Right.Right = CreatTreeNode(6)
 
-	root.Right = CreatTreeNode(2)
-	root.Right.Right = CreatTreeNode(3)
-	root.Right.Left = CreatTreeNode(4)
+	//root.Right = CreatTreeNode(2)
+	//root.Right.Right = CreatTreeNode(3)
+	//root.Right.Left = CreatTreeNode(4)
 
 	//isSymmetric001(root)
 	//res := preBinaryTree(root)
@@ -730,5 +711,4 @@ func TestInBinaryTree(t *testing.T) {
 	//hasPathSum002(root, 13)
 
 	//constructMaximumBinaryTree001([]int{3, 2, 1, 6, 0, 5})
-	buildTree001([]int{1, 2}, []int{1, 2})
 }
