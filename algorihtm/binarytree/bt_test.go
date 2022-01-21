@@ -719,6 +719,29 @@ func getMinimumDifference(root *TreeNode) int {
 	return min
 }
 
+func getMinimumDifference001(root *TreeNode) int {
+	min, pre := math.MaxInt32, math.MinInt32
+
+	var dfs func(root *TreeNode)
+
+	dfs = func(root *TreeNode) {
+		if root == nil {
+			return
+		}
+
+		dfs(root.Left)
+		if min > int(math.Abs(float64(root.Val-pre))) {
+			min = root.Val - pre
+		}
+		pre = root.Val
+		dfs(root.Right)
+
+	}
+
+	dfs(root)
+	return min
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	root.Left = CreatTreeNode(1)
