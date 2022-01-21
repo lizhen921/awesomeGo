@@ -687,6 +687,38 @@ func isValidBST001(root *TreeNode) bool {
 	return false
 }
 
+func getMinimumDifference(root *TreeNode) int {
+	min := math.MaxInt32
+	pre := math.MinInt32
+
+	if root != nil && root.Left == nil && root.Right == nil {
+		return 0
+	}
+	stack := make([]*TreeNode, 0)
+
+	for root != nil {
+		pre = root.Val
+		stack = append(stack, root)
+		root = root.Left
+	}
+
+	for len(stack) != 0 {
+		root = stack[len(stack)-1]
+		stack = stack[:len(stack)-1]
+		minTemp := int(math.Abs(float64(root.Val - pre)))
+		if minTemp < min {
+			min = minTemp
+		}
+		pre = root.Val
+		root = root.Right
+		for root != nil {
+			stack = append(stack, root)
+			root = root.Left
+		}
+	}
+	return min
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	root.Left = CreatTreeNode(1)
