@@ -795,6 +795,32 @@ func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	}
 }
 
+func insertIntoBST(root *TreeNode, val int) *TreeNode {
+	head := root
+	node := &TreeNode{Val: val}
+	if root == nil {
+		return node
+	}
+	for {
+		if root.Val > val {
+			if root.Left == nil {
+				root.Left = node
+				return head
+			} else {
+				root = root.Left
+			}
+		} else if root.Val < val {
+			if root.Right == nil {
+				root.Right = node
+				return head
+			} else {
+				root = root.Right
+			}
+		}
+	}
+
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	//root.Left = CreatTreeNode(1)
