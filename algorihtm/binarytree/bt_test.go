@@ -1,6 +1,7 @@
 package binarytree
 
 import (
+	"fmt"
 	"math"
 	"strconv"
 	"testing"
@@ -742,17 +743,56 @@ func getMinimumDifference001(root *TreeNode) int {
 	return min
 }
 
+func findMode001(root *TreeNode) []int {
+
+	res := make([]int, 0)
+
+	pre := math.MinInt32
+	maxCount := 0
+
+	var bfs func(node *TreeNode)
+
+	tempMax := 0
+	bfs = func(node *TreeNode) {
+		if node == nil {
+			return
+		}
+		bfs(node.Left)
+
+		if node.Val == pre {
+			tempMax++
+		} else {
+			tempMax = 1
+		}
+		pre = node.Val
+		if maxCount < tempMax {
+			maxCount = tempMax
+			res = res[0:0]
+			res = append(res, node.Val)
+			fmt.Println(res)
+		} else if maxCount == tempMax {
+			res = append(res, node.Val)
+			fmt.Println(res)
+		}
+
+		bfs(node.Right)
+	}
+
+	bfs(root)
+	return res
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
-	root.Left = CreatTreeNode(1)
+	//root.Left = CreatTreeNode(1)
 	//root.Left.Left = CreatTreeNode(3)
 	//root.Left.Right = CreatTreeNode(4)
 	//root.Left.Right.Left = CreatTreeNode(5)
 	//root.Left.Right.Right = CreatTreeNode(6)
 
-	//root.Right = CreatTreeNode(2)
+	root.Right = CreatTreeNode(2)
 	//root.Right.Right = CreatTreeNode(3)
-	//root.Right.Left = CreatTreeNode(4)
+	root.Right.Left = CreatTreeNode(2)
 
 	//isSymmetric001(root)
 	//res := preBinaryTree(root)
@@ -764,6 +804,6 @@ func TestInBinaryTree(t *testing.T) {
 	//fmt.Println(binaryTreePaths002(root))
 
 	//hasPathSum002(root, 13)
-
+	findMode001(root)
 	//constructMaximumBinaryTree001([]int{3, 2, 1, 6, 0, 5})
 }
