@@ -782,6 +782,19 @@ func findMode001(root *TreeNode) []int {
 	return res
 }
 
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+	res := root
+
+	for {
+		if res.Val > p.Val && res.Val > q.Val {
+			res = res.Left
+		} else if res.Val < p.Val && res.Val < q.Val {
+			res = res.Right
+		}
+		return res
+	}
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	//root.Left = CreatTreeNode(1)
