@@ -820,6 +820,37 @@ func insertIntoBST(root *TreeNode, val int) *TreeNode {
 	}
 }
 
+func deleteNode(root *TreeNode, key int) *TreeNode {
+
+	if root == nil {
+		return root
+	}
+
+	if root.Val == key {
+		if root.Left == nil {
+			return root.Right
+		}
+		if root.Right == nil {
+			return root.Left
+		}
+		left := root.Left
+		//right := root.Right
+		tempNode := root.Right
+		for tempNode.Left != nil {
+			tempNode = tempNode.Left
+		}
+		tempNode.Left = left
+		return root.Right
+
+	} else if root.Val > key {
+		root.Left = deleteNode(root.Left, key)
+	} else if root.Val < key {
+		root.Right = deleteNode(root.Right, key)
+	}
+
+	return root
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	//root.Left = CreatTreeNode(1)
