@@ -851,6 +851,55 @@ func deleteNode(root *TreeNode, key int) *TreeNode {
 	return root
 }
 
+func deleteNode02(root *TreeNode, key int) *TreeNode {
+	node := root
+	var preNode *TreeNode
+	for root != nil {
+		if root.Val == key {
+			next := deleteRoot(root)
+
+			if preNode == nil {
+				return next
+			}
+			if preNode.Left != nil && preNode.Left.Val == key {
+				preNode.Left = next
+			}
+			if preNode.Right != nil && preNode.Right.Val == key {
+				preNode.Right = next
+			}
+			return node
+		}
+		preNode = root
+		if root.Val > key {
+			root = root.Left
+		} else if root.Val < key {
+			root = root.Right
+		}
+	}
+	return node
+}
+
+func deleteRoot(root *TreeNode) *TreeNode {
+	if root == nil {
+		return root
+	}
+	if root.Left == nil {
+		return root.Right
+	}
+	if root.Right == nil {
+		return root.Left
+	}
+
+	left := root.Left
+	temp := root.Right
+	for temp.Left != nil {
+		temp = temp.Left
+	}
+	temp.Left = left
+
+	return root.Right
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	//root.Left = CreatTreeNode(1)
