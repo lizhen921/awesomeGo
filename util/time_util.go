@@ -2,6 +2,7 @@ package util
 
 import (
 	"fmt"
+	uuid "github.com/rs/xid"
 	"math/rand"
 	"time"
 )
@@ -22,6 +23,7 @@ func IsToday(nano int64) bool {
 	return (nano-startTime)/86400 < 1 && (nano-startTime) >= 0
 }
 
+//生成loguuid
 func RandString32() string {
 	const kAlphaNum = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 	nanoStr := fmt.Sprintf("%d", time.Now().UnixNano())
@@ -33,4 +35,8 @@ func RandString32() string {
 		b[i] = kAlphaNum[rand.Int63()%int64(len(kAlphaNum))]
 	}
 	return nanoStr + string(b)
+}
+
+func UUID() string {
+	return uuid.New().String()
 }
