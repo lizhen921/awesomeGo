@@ -900,6 +900,42 @@ func deleteRoot(root *TreeNode) *TreeNode {
 	return root.Right
 }
 
+//1,0,2  1 ,2
+func trimBST01(root *TreeNode, low int, high int) *TreeNode {
+	if root == nil {
+		return root
+	}
+
+	if root.Val < low {
+		right := trimBST01(root.Right, low, high)
+		return right
+	}
+	if root.Val < high {
+		left := trimBST01(root.Left, low, high)
+		return left
+	}
+
+	root.Left = trimBST01(root.Left, low, high)
+	root.Right = trimBST01(root.Right, low, high)
+
+	return root
+}
+
+func trimBST02(root *TreeNode, low int, high int) *TreeNode {
+	if root == nil {
+		return root
+	}
+
+	for root != nil {
+		if root.Val < low {
+			root = root.Right
+		}
+
+	}
+
+	return root
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	//root.Left = CreatTreeNode(1)
