@@ -955,6 +955,37 @@ func convertBSTHelper(root *TreeNode, sum int) int {
 	return sum
 }
 
+func convertBST001(root *TreeNode) *TreeNode {
+
+	node := root
+	if node == nil {
+		return node
+	}
+
+	stack := make([]*TreeNode, 0)
+	for node != nil {
+		stack = append(stack, node)
+		node = node.Right
+	}
+
+	preSum := 0
+	for len(stack) != 0 {
+		node = stack[len(stack)-1]
+		node.Val = node.Val + preSum
+
+		preSum = node.Val
+		stack = stack[:len(stack)-1]
+
+		node = node.Left
+		for node != nil {
+			stack = append(stack, node)
+			node = node.Right
+		}
+	}
+
+	return root
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	//root.Left = CreatTreeNode(1)
