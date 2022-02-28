@@ -921,17 +921,19 @@ func trimBST01(root *TreeNode, low int, high int) *TreeNode {
 	return root
 }
 
-func trimBST02(root *TreeNode, low int, high int) *TreeNode {
-	if root == nil {
-		return root
-	}
+func sortedArrayToBST(nums []int) *TreeNode {
+	return makeTree(nums, 0, len(nums)-1)
+}
 
-	for root != nil {
-		if root.Val < low {
-			root = root.Right
-		}
-
+func makeTree(nums []int, i int, j int) *TreeNode {
+	if i > j {
+		return nil
 	}
+	mid := (i + j) / 2
+	root := &TreeNode{Val: nums[mid]}
+
+	root.Left = makeTree(nums, i, mid-1)
+	root.Right = makeTree(nums, mid+1, j)
 
 	return root
 }
