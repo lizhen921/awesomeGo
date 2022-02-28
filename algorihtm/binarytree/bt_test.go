@@ -938,6 +938,23 @@ func makeTree(nums []int, i int, j int) *TreeNode {
 	return root
 }
 
+//把二叉搜索树转换为累加树 // 右中左
+func convertBST(root *TreeNode) *TreeNode {
+	convertBSTHelper(root, 0)
+	return root
+}
+
+func convertBSTHelper(root *TreeNode, sum int) int {
+	if root == nil {
+		return sum
+	}
+	sum = convertBSTHelper(root.Right, sum)
+	root.Val = root.Val + sum
+	sum = root.Val
+	sum = convertBSTHelper(root.Left, sum)
+	return sum
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	//root.Left = CreatTreeNode(1)
