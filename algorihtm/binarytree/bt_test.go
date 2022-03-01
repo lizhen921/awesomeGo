@@ -986,6 +986,38 @@ func convertBST001(root *TreeNode) *TreeNode {
 	return root
 }
 
+func LevelBtree(root *TreeNode) (res [][]int) {
+	if root == nil {
+		return res
+	}
+
+	queue := make([]*TreeNode, 0)
+	queue = append(queue, root)
+	levelNodeCount := 1
+	res = append(res, []int{root.Val})
+	for len(queue) != 0 {
+		tempCount := 0
+		tempRes := make([]int, 0, levelNodeCount)
+		for i := 1; i <= levelNodeCount; i++ {
+			root = queue[0]
+			tempRes = append(tempRes, root.Val)
+			queue = queue[1:]
+
+			if root.Left != nil {
+				queue = append(queue, root.Left)
+				tempCount++
+			}
+			if root.Right != nil {
+				queue = append(queue, root.Right)
+				tempCount++
+			}
+		}
+		levelNodeCount = tempCount
+		res = append(res, tempRes)
+	}
+	return res
+}
+
 func TestInBinaryTree(t *testing.T) {
 	root := &TreeNode{Val: 1}
 	//root.Left = CreatTreeNode(1)
