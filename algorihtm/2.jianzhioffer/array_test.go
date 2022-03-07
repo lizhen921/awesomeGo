@@ -5,6 +5,77 @@ import (
 	"testing"
 )
 
+func search(arr []int, val int) (found bool, index int) {
+	i := 0
+	j := len(arr) - 1
+	for i <= j {
+		mid := i + (j-i)/2
+		midV := arr[mid]
+		if midV > val {
+			j = mid - 1
+		} else if midV < val {
+			i = mid + 1
+		} else {
+			return true, i + (j-i)/2
+		}
+	}
+	return false, 0
+}
+
+// [3,4,5,1,2] 为 [1,2,3,4,5]
+
+//[0,1,4,4,5,6,7]
+//[4,5,6,7,0,1,4]
+//[0,1,4,4,5,6,7]
+
+func minArray(numbers []int) int {
+	i := 0
+	j := len(numbers) - 1
+
+	for i < j {
+		mid := i + (j-i)/2
+		if numbers[mid] < numbers[j] {
+			//在前
+			j = mid
+		} else if numbers[mid] > numbers[j] {
+			//在后
+			i = mid + 1
+		} else {
+			//相等，迁移一位，再判断
+			j--
+		}
+	}
+	return numbers[i]
+}
+
+func minArray01(number []int) int {
+	i := 0
+	j := len(number) - 1
+
+	if number[i] < number[j] {
+		return number[i]
+	}
+
+	for i < j {
+		if number[i] < number[j] {
+			return number[i]
+		}
+		mid := i + (j-i)/2
+		if number[i] < number[mid] {
+			i = mid
+		} else if number[i] > number[mid] {
+			j = mid
+		} else {
+			i++
+		}
+	}
+	return number[i]
+}
+
+func TestMinArray(t *testing.T) {
+
+}
+
 func findNumberIn2DArray(matrix [][]int, target int) bool {
 	if len(matrix) == 0 {
 		return false
