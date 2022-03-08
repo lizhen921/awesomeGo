@@ -36,3 +36,30 @@ func dfs(i int, len_i int, j int, len_j int, index int, board [][]byte, word str
 	board[i][j] = temp
 	return false
 }
+
+//实现 pow(x, n) ，即计算 x 的 n 次幂函数（即，xn）。不得使用库函数，同时不需要考虑大数问题。
+func pow(m float64, n int) float64 {
+	if m == 0 {
+		return 0
+	}
+	res := calPow(m, n)
+	if n < 0 {
+		res = 1 / res
+	}
+	return res
+}
+
+func calPow(m float64, n int) float64 {
+	if n == 0 {
+		return 1
+	}
+	if n == 1 {
+		return m
+	}
+	res := calPow(m, n>>1)
+	res *= res
+	if n&1 != n {
+		res *= m
+	}
+	return res
+}
