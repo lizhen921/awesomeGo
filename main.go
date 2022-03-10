@@ -2,8 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strings"
-	"time"
 )
 
 /**
@@ -186,18 +184,23 @@ func main() {
 
 func main() {
 
+	nums := make([]int, 0, 5)
+	nums = append(nums, 1)
+	nums = append(nums, 2)
+	nums = append(nums, 3)
+
+	fmt.Println(nums[:0])
+	fmt.Println(nums[1:])
+	fmt.Printf("%p\n", nums)
+	temp := append(nums[:0], nums[1:]...)
+	fmt.Printf("%p\n", nums)
+	fmt.Printf("%p\n", temp)
+	fmt.Println(temp)
+	fmt.Println(nums)
+
 	str := "0"
 	for i := 1; i < 200; i++ {
 		str = fmt.Sprintf("%s-%s-%d", str, ",", i)
 	}
 
-	start := time.Now()
-	for i := 0; i < 1000; i++ {
-		strings.Split(str, ",")
-		//fmt.Println(str)
-	}
-	fmt.Println(time.Since(start))
-
-	locTime, _ := time.Parse("2006-01-02 15:04:05 ", "2022-02-02 16:59:59")
-	fmt.Println(locTime)
 }
