@@ -116,7 +116,98 @@ func dfsNum(n int, res []string, needAppend []byte) {
 	//}
 }
 
-//全排列问题
+//组合
+//给定两个整数 n 和 k，返回范围 [1, n] 中所有可能的 k 个数的组合。
+func combine(n int, k int) [][]int {
+	res := make([][]int, 0)
+	ans := make([]int, 0, k)
+
+	nList := make([]int, 0, n)
+	for i := 1; i <= n; i++ {
+		nList = append(nList, i)
+	}
+	var backTrack func([]int)
+
+	backTrack = func(list []int) {
+		if len(ans) == k {
+			temp := make([]int, len(ans))
+			copy(temp, ans)
+			res = append(res, temp)
+			return
+		}
+		for i, n := range list {
+			ans = append(ans, n)
+			temp := make([]int, len(list))
+			copy(temp, list)
+			temp = append([]int{}, temp[i+1:]...)
+
+			backTrack(temp)
+			ans = ans[:len(ans)-1]
+		}
+	}
+	backTrack(nList)
+	return res
+}
+
+func TestCombine(t *testing.T) {
+
+	fmt.Println(combine(4, 2))
+}
+
+func combine1(n int, k int) [][]int {
+
+	var chosen []int
+	var ans [][]int
+	var recur func(i int)
+	recur = func(i int) {
+		// 临界条件
+		if (len(chosen) > k) || (len(chosen)+n-i+1) < k {
+			return
+		}
+		if i == n+1 {
+			ans = append(ans, append([]int{}, chosen...))
+
+			//             ans = append(ans, make([]int, 0))
+			//             for _, value := range chosen {
+			//                 ans[len(ans) - 1] = append(ans[len(ans) - 1], value)
+
+			//             }
+			return
+		}
+		recur(i + 1)
+		chosen = append(chosen, i)
+		recur(i + 1)
+		chosen = chosen[:len(chosen)-1]
+	}
+	recur(1)
+	return ans
+
+}
+
+// 回溯
+func combine2(n int, k int) [][]int {
+	res := [][]int{}
+	track := []int{}
+	var backTrack func(n, k, start int)
+	backTrack = func(n, k, start int) {
+		// 终止条件
+		if len(track) == k {
+			// var temp []int
+			temp := make([]int, k)
+			copy(temp, track)
+			res = append(res, temp)
+		}
+		for i := start; i <= n; i++ {
+			track = append(track, i)
+			backTrack(n, k, i+1)
+			track = track[:len(track)-1] // 回溯
+		}
+	}
+	backTrack(n, k, 1)
+	return res
+}
+
+//全排列
 func permute(nums []int) [][]int {
 	res := make([][]int, 0)
 	path := make([]int, 0, len(nums))
