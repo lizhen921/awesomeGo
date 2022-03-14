@@ -242,6 +242,46 @@ func TestCombin(t *testing.T) {
 	combinationSum3(3, 7)
 }
 
+var digitString = map[byte]string{
+	'2': "abc",
+	'3': "def",
+	'4': "ghi",
+	'5': "jkl",
+	'6': "mno",
+	'7': "pqrs",
+	'8': "tuv",
+	'9': "wxyz",
+}
+
+func letterCombinations(digits string) []string {
+	res := make([]string, 0)
+	ans := make([]byte, 0)
+	if digits == "" {
+		return res
+	}
+	var combin func(startIndex int)
+
+	combin = func(startIndex int) {
+		if len(ans) == len(digits) {
+			temp := make([]byte, len(ans))
+			copy(temp, ans)
+			res = append(res, string(temp))
+			return
+		}
+
+		for i := startIndex; i < len(digits); i++ {
+			tempStr := digitString[digits[i]]
+			for j := 0; j < len(tempStr); j++ {
+				ans = append(ans, tempStr[j])
+				combin(i + 1)
+				ans = ans[:len(ans)-1]
+			}
+		}
+	}
+	combin(0)
+	return res
+}
+
 //全排列
 func permute(nums []int) [][]int {
 	res := make([][]int, 0)
