@@ -207,6 +207,41 @@ func combine2(n int, k int) [][]int {
 	return res
 }
 
+//k个数  和为n
+func combinationSum3(k int, n int) [][]int {
+	res := make([][]int, 0)
+	ans := make([]int, 0, k)
+
+	var combin func(sum int, startIndex int, k int)
+
+	combin = func(sum int, startIndex int, k int) {
+		if sum == n && len(ans) == k {
+			//记录
+			temp := make([]int, len(ans))
+			fmt.Println(ans)
+			copy(temp, ans)
+			res = append(res, temp)
+			return
+		}
+		if sum > n || len(ans) > k {
+			return
+		}
+		for i := startIndex; i <= 9; i++ {
+			sum += i
+			ans = append(ans, i)
+			combin(sum, i+1, k)
+			sum = sum - i
+			ans = ans[:len(ans)-1]
+		}
+	}
+	combin(0, 1, k)
+	return res
+}
+
+func TestCombin(t *testing.T) {
+	combinationSum3(3, 7)
+}
+
 //全排列
 func permute(nums []int) [][]int {
 	res := make([][]int, 0)
