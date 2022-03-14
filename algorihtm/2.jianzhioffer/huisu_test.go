@@ -282,6 +282,35 @@ func letterCombinations(digits string) []string {
 	return res
 }
 
+func combinationSum(candidates []int, target int) [][]int {
+	res := make([][]int, 0)
+	ans := make([]int, 0)
+	var combin func(sum int, startIndex int)
+
+	combin = func(sum int, startIndex int) {
+		if sum == target {
+			temp := make([]int, len(ans))
+			copy(temp, ans)
+			res = append(res, temp)
+			return
+		}
+		if sum > target {
+			return
+		}
+
+		for i := startIndex; i < len(candidates); i++ {
+			sum := sum + candidates[i]
+			ans = append(ans, candidates[i])
+			combin(sum, i)
+			sum = sum - candidates[i]
+			ans = ans[:len(ans)-1]
+		}
+	}
+
+	combin(0, 0)
+	return res
+}
+
 //全排列
 func permute(nums []int) [][]int {
 	res := make([][]int, 0)
