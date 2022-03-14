@@ -2,6 +2,7 @@ package __jianzhioffer
 
 import (
 	"fmt"
+	"sort"
 	"testing"
 )
 
@@ -309,6 +310,40 @@ func combinationSum(candidates []int, target int) [][]int {
 
 	combin(0, 0)
 	return res
+}
+
+func combinationSum2(candidates []int, target int) [][]int {
+	res := make([][]int, 0)
+	ans := make([]int, 0)
+	sort.Ints(candidates)
+	var combin func(sum int, startIndex int)
+
+	combin = func(sum int, startIndex int) {
+		if sum == target {
+			temp := make([]int, len(ans))
+			copy(temp, ans)
+			res = append(res, temp)
+			return
+		}
+		if sum > target {
+			return
+		}
+
+		for i := startIndex; i < len(candidates); i++ {
+			if i > startIndex && candidates[i] == candidates[i-1] {
+				continue
+			}
+			sum := sum + candidates[i]
+			ans = append(ans, candidates[i])
+			combin(sum, i+1)
+			sum = sum - candidates[i]
+			ans = ans[:len(ans)-1]
+		}
+	}
+
+	combin(0, 0)
+	return res
+
 }
 
 //全排列
