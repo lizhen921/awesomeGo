@@ -346,6 +346,53 @@ func combinationSum2(candidates []int, target int) [][]int {
 
 }
 
+//分割回文串
+//输入：s = "aab"
+//输出：[["a","a","b"],["aa","b"]]
+func partition(s string) [][]string {
+	res := make([][]string, 0)
+	ans := make([]string, 0)
+
+	var splitStr func(startIndex int, ans []string)
+
+	splitStr = func(startIndex int, ans []string) {
+		//递归到字符串最后，将本次递归的结果，添加到最终结果中
+		if startIndex >= len(s) {
+			t := make([]string, len(ans))
+			copy(t, ans)
+			res = append(res, t)
+		}
+
+		for i := startIndex; i < len(s); i++ {
+			//开始切割，从startIndex到i这个段的str，判断是否为回文，是回文，添加到本次递归结果中，否则i++再进行截取
+			if isCorrStr(s, startIndex, i) {
+				ans = append(ans, s[startIndex:i+1])
+			} else {
+				continue
+			}
+			//递归
+			splitStr(i+1, ans)
+			//回溯
+			ans = ans[:len(ans)-1]
+		}
+	}
+
+	splitStr(0, ans)
+	return res
+}
+
+//判断是否回文
+func isCorrStr(str string, i, j int) bool {
+	for i < j {
+		if str[i] != str[j] {
+			return false
+		}
+		i++
+		j--
+	}
+	return true
+}
+
 //全排列
 func permute(nums []int) [][]int {
 	res := make([][]int, 0)
