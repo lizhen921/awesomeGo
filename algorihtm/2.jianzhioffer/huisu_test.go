@@ -3,6 +3,8 @@ package __jianzhioffer
 import (
 	"fmt"
 	"sort"
+	"strconv"
+	"strings"
 	"testing"
 )
 
@@ -389,6 +391,46 @@ func isCorrStr(str string, i, j int) bool {
 		}
 		i++
 		j--
+	}
+	return true
+}
+
+//复原ip
+func restoreIpAddresses(s string) []string {
+	res := make([]string, 0)
+	tempRes := make([]string, 0)
+
+	var dfs func(startIndex int)
+
+	dfs = func(startIndex int) {
+		if startIndex >= len(s) {
+			if len(tempRes) == 4 {
+				res = append(res, strings.Join(tempRes, "."))
+			}
+			return
+		}
+		for i := startIndex; i < len(s); i++ {
+			if corrNum(s[startIndex : i+1]) {
+				tempRes = append(tempRes, s[startIndex:i+1])
+			} else {
+				break
+			}
+			dfs(i + 1)
+			tempRes = tempRes[:len(tempRes)-1]
+		}
+	}
+
+	dfs(0)
+	return res
+}
+
+func corrNum(ipStr string) bool {
+	if len(ipStr) > 1 && ipStr[0] == '0' {
+		return false
+	}
+	ip, err := strconv.Atoi(ipStr)
+	if err != nil || ip > 255 {
+		return false
 	}
 	return true
 }

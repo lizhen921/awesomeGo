@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 )
 
 /**
@@ -183,6 +184,13 @@ func main() {
 }*/
 
 func main() {
+
+	s := "012"
+	i, err := strconv.Atoi(s)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(i)
 
 	nums := make([]int, 0, 5)
 	nums = append(nums, 1)
