@@ -435,6 +435,35 @@ func corrNum(ipStr string) bool {
 	return true
 }
 
+func subsets(nums []int) [][]int {
+	res := make([][]int, 0)
+	ans := make([]int, 0)
+	res = append(res, []int{})
+	var dfs func(startIndex int)
+
+	dfs = func(startIndex int) {
+
+		if startIndex >= len(nums) {
+			return
+		}
+		for i := startIndex; i < len(nums); i++ {
+			ans = append(ans, nums[i])
+			temp := make([]int, len(ans))
+			copy(temp, ans)
+			res = append(res, temp)
+			dfs(i + 1)
+			ans = ans[:len(ans)-1]
+		}
+	}
+
+	dfs(0)
+	return res
+}
+
+func TestUsubsets(t *testing.T) {
+	subsets([]int{1, 2, 3})
+}
+
 //全排列
 func permute(nums []int) [][]int {
 	res := make([][]int, 0)
