@@ -464,6 +464,32 @@ func TestUsubsets(t *testing.T) {
 	subsets([]int{1, 2, 3})
 }
 
+func subsetsWithDup(nums []int) [][]int {
+	res := make([][]int, 0)
+	signalRes := make([]int, 0)
+	res = append(res, []int{})
+	sort.Ints(nums)
+	var dfs func(startIndex int)
+
+	dfs = func(startIndex int) {
+		for i := startIndex; i < len(nums); i++ {
+			if i > startIndex && nums[i] == nums[i-1] {
+				continue
+			}
+			signalRes = append(signalRes, nums[i])
+			temp := make([]int, len(signalRes))
+			copy(temp, signalRes)
+			res = append(res, temp)
+
+			dfs(i + 1)
+			signalRes = signalRes[:len(signalRes)-1]
+		}
+	}
+
+	dfs(0)
+	return res
+}
+
 //全排列
 func permute(nums []int) [][]int {
 	res := make([][]int, 0)
