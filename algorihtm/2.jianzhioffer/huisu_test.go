@@ -551,32 +551,56 @@ func backTring(startIndex int, nums, subRes []int, res *[][]int) {
 //全排列
 func permute(nums []int) [][]int {
 	res := make([][]int, 0)
-	path := make([]int, 0, len(nums))
+	signalRes := make([]int, 0)
+	signalResMap := make(map[int]bool)
+	var dfs func(startIndex int)
 
-	var backTrack func([]int)
-
-	backTrack = func(numbers []int) {
-		if len(numbers) == 0 {
-			fmt.Println("path:", path)
-			temp := make([]int, len(path))
-			copy(temp, path)
+	dfs = func(startIndex int) {
+		if len(signalRes) == len(nums) {
+			temp := make([]int, len(signalRes))
+			copy(temp, signalRes)
 			res = append(res, temp)
-			fmt.Println("res:", res)
 			return
 		}
-		for i, n := range numbers {
-			path = append(path, n)
-			temp := make([]int, len(numbers))
-			copy(temp, numbers)
-			temp = append(temp[:i], temp[i+1:]...)
-			backTrack(temp)
-			path = path[:len(path)-1]
+		for i := startIndex; i < len(nums); i++ {
+			if signalResMap[i] {
+				continue
+			}
+			signalRes = append(signalRes, nums[i])
+			signalResMap[i] = true
+			dfs(0)
+			signalRes = signalRes[:len(signalRes)-1]
+			signalResMap[i] = false
 		}
 	}
 
-	backTrack(nums)
-	fmt.Println(res)
+	dfs(0)
 	return res
+}
+
+//全排列
+var res [][]int
+
+func permute1(nums []int) [][]int {
+	res = [][]int{}
+	backTrack(nums, len(nums), []int{})
+	return res
+}
+func backTrack(nums []int, numsLen int, path []int) {
+	if len(nums) == 0 {
+		p := make([]int, len(path))
+		copy(p, path)
+		res = append(res, p)
+	}
+	for i := 0; i < numsLen; i++ {
+		cur := nums[i]
+		path = append(path, cur)
+		nums = append(nums[:i], nums[i+1:]...) //直接使用切片
+		backTrack(nums, len(nums), path)
+		nums = append(nums[:i], append([]int{cur}, nums[i:]...)...) //回溯的时候切片也要复原，元素位置不能变
+		path = path[:len(path)-1]
+
+	}
 }
 
 func TestPerMute(t *testing.T) {
