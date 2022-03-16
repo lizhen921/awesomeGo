@@ -490,6 +490,64 @@ func subsetsWithDup(nums []int) [][]int {
 	return res
 }
 
+func findSubsequences(nums []int) [][]int {
+	res := make([][]int, 0)
+	signalRes := make([]int, 0)
+
+	var dfs func(startIndex int)
+	dfs = func(startIndex int) {
+		if len(signalRes) >= 2 {
+			temp := make([]int, len(signalRes))
+			copy(temp, signalRes)
+			res = append(res, temp)
+		}
+		levelMap := make(map[int]int)
+		for i := startIndex; i < len(nums); i++ {
+
+			if (len(signalRes) > 0 && nums[i] < signalRes[len(signalRes)-1]) || levelMap[nums[i]] >= 1 {
+				continue
+			}
+			signalRes = append(signalRes, nums[i])
+			levelMap[nums[i]]++
+
+			dfs(i + 1)
+			signalRes = signalRes[:len(signalRes)-1]
+		}
+	}
+	dfs(0)
+	return res
+}
+
+func TestFind(t *testing.T) {
+	findSubsequences([]int{4, 4, 3, 2, 1})
+}
+
+func findSubsequences1(nums []int) [][]int {
+	var subRes []int
+	var res [][]int
+	backTring(0, nums, subRes, &res)
+	return res
+}
+func backTring(startIndex int, nums, subRes []int, res *[][]int) {
+	if len(subRes) > 1 {
+		tmp := make([]int, len(subRes))
+		copy(tmp, subRes)
+		*res = append(*res, tmp)
+	}
+	history := [201]int{} //记录本层元素使用记录
+	for i := startIndex; i < len(nums); i++ {
+		//分两种情况判断：一，当前取的元素小于子集的最后一个元素，则继续寻找下一个适合的元素
+		//                或者二，当前取的元素在本层已经出现过了，所以跳过该元素，继续寻找
+		if len(subRes) > 0 && nums[i] < subRes[len(subRes)-1] || history[nums[i]+100] == 1 {
+			continue
+		}
+		history[nums[i]+100] = 1 //表示本层该元素使用过了
+		subRes = append(subRes, nums[i])
+		backTring(i+1, nums, subRes, res)
+		subRes = subRes[:len(subRes)-1]
+	}
+}
+
 //全排列
 func permute(nums []int) [][]int {
 	res := make([][]int, 0)
