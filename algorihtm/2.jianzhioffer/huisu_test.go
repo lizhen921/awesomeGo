@@ -603,8 +603,79 @@ func backTrack(nums []int, numsLen int, path []int) {
 	}
 }
 
+//[1,1,2]   全排列 有重复数据
+func permuteUnique(nums []int) [][]int {
+	res := make([][]int, 0)
+	path := make([]int, 0)
+
+	vis := make(map[int]bool)
+
+	var dfs func()
+	dfs = func() {
+		if len(path) == len(nums) {
+			temp := make([]int, len(nums))
+			copy(temp, path)
+			res = append(res, temp)
+		}
+
+		used := [21]int{}
+		for i, n := range nums {
+			if vis[i] == true || used[nums[i]+10] == 1 {
+				continue
+			}
+			used[nums[i]+10] = 1
+			vis[i] = true
+			path = append(path, n)
+			dfs()
+			path = path[:len(path)-1]
+			vis[i] = false
+
+		}
+	}
+	dfs()
+	fmt.Println(res)
+	return res
+}
+
+//[1,1,2]   全排列 有重复数据
+func permuteUnique02(nums []int) [][]int {
+	res := make([][]int, 0)
+	path := make([]int, 0)
+	sort.Ints(nums)
+
+	vis := make([]bool, len(nums))
+	var dfs func()
+	dfs = func() {
+		if len(path) == len(nums) {
+			temp := make([]int, len(nums))
+			copy(temp, path)
+			res = append(res, temp)
+		}
+
+		for i, n := range nums {
+			if i > 0 && !vis[i-1] {
+				fmt.Println("1233")
+			}
+			if vis[i] == true {
+				continue
+			}
+			if i > 0 && nums[i] == nums[i-1] && !vis[i-1] {
+				continue
+			}
+			vis[i] = true
+			path = append(path, n)
+			dfs()
+			path = path[:len(path)-1]
+			vis[i] = false
+		}
+	}
+	dfs()
+	fmt.Println(res)
+	return res
+}
+
 func TestPerMute(t *testing.T) {
-	permute([]int{1, 2, 3})
+	permuteUnique02([]int{1, 1, 2})
 
 }
 
