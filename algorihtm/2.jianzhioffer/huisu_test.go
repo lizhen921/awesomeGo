@@ -721,3 +721,72 @@ func permute01(nums []int) [][]int {
 	backTrack()
 	return res
 }
+
+//输入：n = 4
+//输出：[[".Q..","...Q","Q...","..Q."],["..Q.","Q...","...Q",".Q.."]]
+func solveNQueens(n int) [][]string {
+	res := make([][]string, 0)
+	path := make([]int, 0)
+	var dfs func(row int)
+	dfs = func(row int) {
+		if row == n {
+			temp := genSimplResByPath(path)
+			res = append(res, temp)
+			return
+		}
+
+		for i := 0; i < n; i++ {
+			if !isValid(row, i, path, n) {
+				continue
+			}
+			path = append(path, i)
+			dfs(row + 1)
+			path = path[:len(path)-1]
+		}
+	}
+	dfs(0)
+	fmt.Println(res)
+	return res
+}
+
+func isValid(row int, col int, path []int, n int) bool {
+	if row ==2 && col==1{
+		fmt.Println(1)
+	}
+
+	for i := 0; i < len(path); i++ {
+		if col == path[i] {
+			return false
+		}
+	}
+	for i, j := row-1, col-1; i >= 0 && j >= 0; i, j = i-1, j-1 {
+		if path[i] == j {
+			return false
+		}
+	}
+	for i, j := row-1, col+1; i >= 0 && j <= n; i, j = i-1, j+1 {
+		if path[i] == j {
+			return false
+		}
+	}
+	return true
+}
+
+func genSimplResByPath(path []int) (res []string) {
+	for i, _ := range path {
+		position := path[i]
+		tempSrt := ""
+		for j := 0; j < len(path); j++ {
+			if position == j {
+				tempSrt = tempSrt + "Q"
+			} else {
+				tempSrt = tempSrt + "."
+			}
+		}
+		res = append(res, tempSrt)
+	}
+	return
+}
+func TestSolveNQueens(t *testing.T) {
+	solveNQueens(5)
+}
