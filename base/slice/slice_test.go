@@ -72,30 +72,32 @@ func TestJson(t *testing.T) {
 
 func TestSlice2(t *testing.T) {
 	list := make([]int, 0, 5)
-	liStruct := make([]*Person, 0, 5)
+	liStruct := make([]Person, 0, 5)
 
 	list = append(list, 0)
 
-	liStruct = append(liStruct, &Person{Name: "张三", Age: 10})
+	liStruct = append(liStruct, Person{Name: "张三", Age: 10})
 
-	updateList(&list, &liStruct)
+	updateList(list, liStruct)
 	fmt.Printf("%v\n", list)
 	fmt.Printf("%v\n", liStruct)
 
 }
 
-func updateList(list *[]int, liStruct *[]*Person) {
-	*list = append(*list, 1)
-	*list = append(*list, 2)
-	*list = append(*list, 3)
-	*list = append(*list, 4)
-	*list = append(*list, 5)
+func updateList(list []int, liStruct []Person) {
+	list[0] = 100
+	list = append(list, 1)
+	list = append(list, 2)
+	list = append(list, 3)
+	list = append(list, 4)
+	list = append(list, 5)
 
-	*liStruct = append(*liStruct, &Person{Name: "张三", Age: 11})
-	*liStruct = append(*liStruct, &Person{Name: "张三", Age: 12})
-	*liStruct = append(*liStruct, &Person{Name: "张三", Age: 13})
-	*liStruct = append(*liStruct, &Person{Name: "张三", Age: 14})
-	*liStruct = append(*liStruct, &Person{Name: "张三", Age: 15})
+	liStruct[0].Age = 100
+	liStruct = append(liStruct, Person{Name: "张三", Age: 11})
+	liStruct = append(liStruct, Person{Name: "张三", Age: 12})
+	liStruct = append(liStruct, Person{Name: "张三", Age: 13})
+	liStruct = append(liStruct, Person{Name: "张三", Age: 14})
+	liStruct = append(liStruct, Person{Name: "张三", Age: 15})
 
 	return
 }

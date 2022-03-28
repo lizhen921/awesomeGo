@@ -5,6 +5,35 @@ import (
 	"testing"
 )
 
+//和最大子序列
+//[-2,1,-3,4,-1,2,1,-5,4]  6
+func maxSubArray(nums []int) int {
+	if len(nums) == 0 {
+		return 0
+	}
+	max := nums[0]
+	maxi := 0 //第i个元素为结尾的最大和
+	for i, _ := range nums {
+		if i == 0 {
+			maxi = nums[0]
+		} else {
+			if maxi+nums[i] < nums[i] {
+				maxi = nums[i]
+			} else {
+				maxi = maxi + nums[i]
+			}
+		}
+		if maxi > max {
+			max = maxi
+		}
+	}
+	return max
+}
+func TestMaxSubArray(t *testing.T) {
+	maxSubArray([]int{-2, 1, -3, 4, -1, 2, 1, -5, 4})
+
+}
+
 //摆动序列
 func wiggleMaxLength(nums []int) int {
 	if len(nums) < 2 {
