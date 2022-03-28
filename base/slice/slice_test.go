@@ -41,8 +41,8 @@ func TestArrayAndSlice(t *testing.T) {
 
 }
 
-func TestSlice(t *testing.T)  {
-	slice1 := make([]int,0,0)
+func TestSlice(t *testing.T) {
+	slice1 := make([]int, 0, 0)
 
 	for i := 0; i < 2000; i++ {
 		slice1 = append(slice1, i)
@@ -68,4 +68,39 @@ func TestJson(t *testing.T) {
 
 	var li []string
 	fmt.Println(len(li))
+}
+
+func TestSlice2(t *testing.T) {
+	list := make([]int, 0, 5)
+	liStruct := make([]*Person, 0, 5)
+
+	list = append(list, 0)
+
+	liStruct = append(liStruct, &Person{Name: "张三", Age: 10})
+
+	updateList(&list, &liStruct)
+	fmt.Printf("%v\n", list)
+	fmt.Printf("%v\n", liStruct)
+
+}
+
+func updateList(list *[]int, liStruct *[]*Person) {
+	*list = append(*list, 1)
+	*list = append(*list, 2)
+	*list = append(*list, 3)
+	*list = append(*list, 4)
+	*list = append(*list, 5)
+
+	*liStruct = append(*liStruct, &Person{Name: "张三", Age: 11})
+	*liStruct = append(*liStruct, &Person{Name: "张三", Age: 12})
+	*liStruct = append(*liStruct, &Person{Name: "张三", Age: 13})
+	*liStruct = append(*liStruct, &Person{Name: "张三", Age: 14})
+	*liStruct = append(*liStruct, &Person{Name: "张三", Age: 15})
+
+	return
+}
+
+type Person struct {
+	Name string
+	Age  int64
 }
