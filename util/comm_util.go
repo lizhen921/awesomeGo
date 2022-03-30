@@ -1,6 +1,7 @@
 package util
 
 import (
+	"encoding/base64"
 	"math/rand"
 	"net"
 	"time"
@@ -31,4 +32,34 @@ func getLocalIP() string {
 		}
 	}
 	return ""
+}
+
+//编码，解码
+// redisName2idx全集: key:value
+// currentExpMap命中的: key:bool
+func ExpInfo2BitMapUseRedisConfig(redisName2idx map[string]int, currentExpMap map[string]bool) string {
+	numField := len(redisName2idx)
+	numByte := numField / 8
+	if numField%8 > 0 {
+		numByte += 1
+	}
+	expBitMap := make([]byte, numByte)
+
+	for key, v := range currentExpMap {
+		if !v {
+			continue
+		}
+
+		idx := redisName2idx[key] - 1
+		if idx < 0 {
+			continue
+		}
+
+		byteIdx := idx / 8
+		byteOffset := uint(idx % 8)
+
+		bitVal := byte(1 << byteOffset)
+		expBitMap[byteIdx] |= bitVal
+	}
+	return base64.StdEncoding.EncodeToString(expBitMap)
 }
