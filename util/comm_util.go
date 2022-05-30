@@ -1,11 +1,38 @@
 package util
 
 import (
+	"crypto/md5"
 	"encoding/base64"
+	"fmt"
+	"hash/fnv"
 	"math/rand"
 	"net"
+	"strconv"
 	"time"
 )
+
+//将字符串转为uint32
+func HashStringToUint32(str string) uint32 {
+	//将str的md5结果存成字符串
+	strHex := fmt.Sprintf("%x", md5.Sum([]byte(str)))
+	//取前8字节（8字节"FFFFFFFF"，对应4字节整数）
+	//strHead8 := strHex[0:8]
+	//转成对应的4字节无符号整数
+	u64HashInt, err := strconv.ParseUint(strHex, 16, 32)
+	if err != nil {
+		//转换错误，使用原有取值方式
+		return HashStringToInt(str)
+	} else {
+		//转换成功，使用新值
+		return uint32(u64HashInt)
+	}
+}
+
+func HashStringToInt(s string) uint32 {
+	h := fnv.New32()
+	h.Write([]byte(s))
+	return h.Sum32()
+}
 
 //生成[min, max]之间的随机数
 func GetRandInt(min, max int) int {

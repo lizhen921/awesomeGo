@@ -511,6 +511,38 @@ func TestGetIntersectionNode(t *testing.T) {
 
 /*
 
+ */
+type Node struct {
+	Value int
+	Next  *Node
+}
+
+func reverse(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+	pre, cur := head, head.Next
+	pre.Next = nil
+
+	for cur != nil {
+		temp := cur.Next
+		cur.Next = pre
+		pre = cur
+		cur = temp
+	}
+	return pre
+}
+
+func TestReverseList3(t *testing.T) {
+	valList := []int{3, 4, 6, 1, 7, 2}
+	head := GengrateLinkList(valList)
+	PrintLinkList(head)
+	head = reverse(head)
+	PrintLinkList(head)
+}
+
+/*
+
 
 
 

@@ -9,6 +9,11 @@ import (
 
 var stdOffset int64 = 8 * 3600 * 1e9
 
+func TimestamToDateStr(timestamp int64) string {
+	t := time.Unix(timestamp, 0)
+	return t.Format("2006-01-02 ")
+}
+
 //时间错转时间串
 func TimestampToTimeStr(timestamp int64) string {
 	t := time.Unix(timestamp, 0)
