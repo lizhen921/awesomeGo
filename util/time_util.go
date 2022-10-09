@@ -34,6 +34,13 @@ func IsToday(nano int64) bool {
 	return (nano-startTime)/86400 < 1 && (nano-startTime) >= 0
 }
 
+func IsMillToday(nano int64) bool {
+	currentTime := time.Now()
+	startTime := time.Date(currentTime.Year(), currentTime.Month(), currentTime.Day(), 0, 0, 0, 0, currentTime.Location()).UnixNano() / 1e6
+	fmt.Println(startTime)
+	return (nano-startTime)/1e3/86400 < 1 && (nano-startTime) >= 0
+}
+
 //生成loguuid
 func RandString32() string {
 	const kAlphaNum = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"

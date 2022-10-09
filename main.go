@@ -1,8 +1,18 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
-	"strconv"
+	algosummary "git.corpautohome.com/cupid/base_service/protocol/algosummary/protobuf"
+	"github.com/golang/protobuf/proto"
+	"io/ioutil"
+	"net/http"
+	"strings"
+	"time"
+)
+
+const (
+	Summary_URL = "http://algo-summary-v2-prod.corpautohome.com/api/v1/algoSummary/resourceProtobuf?version=1.0"
 )
 
 /**
@@ -184,31 +194,153 @@ func main() {
 }*/
 
 func main() {
+	/*
+		rConf := &RecallConf{
+			Rway: "rrr",
+			Must: Must{
+				Rtype:             []string{"t1", "t2"},
+				MustIndex:         []string{"uniq_series_id", "uniq_category_name"},
+				NotConsiderNumber: make(map[string]bool, 0),
+				ProfileData: map[string][]string{
+					"uniq_series_id":     {"series---1", "series---2", "series---3"},
+					"uniq_category_name": {"category===1", "category===2"},
+					"author":             {"author--1", "author--2"}},
+			},
+		}
 
-	s := "012"
-	i, err := strconv.Atoi(s)
+		tempIntents := make([]*Intent, 0)
+		for _, rtype := range rConf.Must.Rtype {
+
+			intentTypes := make([]*IntentType, 0)
+			for i, index := range rConf.Must.MustIndex {
+				//按照索引找画像字段
+				profileNames := rConf.Must.ProfileData[index]
+
+				//按照画像字段查用户画像
+				profieDatas := make([]interface{}, 0)
+				for _, pn := range profileNames {
+					tempProfileData := GetProfileByName(pn)
+					profieDatas = append(profieDatas, tempProfileData...)
+				}
+
+				if len(profieDatas) == 0 {
+					continue
+				}
+
+				//需要考虑单个索引值召回条数
+				for _, pd := range profieDatas {
+					intentType := &IntentType{
+						Index:  index,
+						Values: []interface{}{pd},
+					}
+					intentTypes = append(intentTypes, intentType)
+
+					if i == len(rConf.Must.MustIndex)-1 {
+						intent := &Intent{
+							RecallName:  "rrr",
+							Rtype:       rtype,
+							Size:        rConf.PerNum,
+							IntentTypes: intentTypes,
+						}
+						tempIntents = append(tempIntents, intent)
+						intentTypes = intentTypes[:len(intentTypes)-1]
+					}
+				}
+			}
+		}
+		fmt.Println(tempIntents)
+	*/
+
+	/*slice1 := []interface{}{"a", "b", "c", "d", "e", "f", "g", "h", "j", "k"}
+	slice2 := []interface{}{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	slice3 := []interface{}{"A", "B", "C", "D", "E", "F", "G", "H", "J", "K"}
+
+	sets := CartesianProduct(slice1, slice2, slice3)
+	fmt.Println(len(sets))
+	fmt.Println(sets)
+	//
+	for _, set := range sets {
+		fmt.Println(set)
+	}*/
+
+	algo()
+}
+
+func CartesianProduct(sets ...[]interface{}) [][]interface{} {
+	lens := func(i int) int { return len(sets[i]) }
+	product := [][]interface{}{}
+	for ix := make([]int, len(sets)); ix[0] < lens(0); nextIndex(ix, lens) {
+		var r []interface{}
+		for j, k := range ix {
+			r = append(r, sets[j][k])
+		}
+		product = append(product, r)
+	}
+	return product
+}
+
+func nextIndex(ix []int, lens func(i int) int) {
+	for j := len(ix) - 1; j >= 0; j-- {
+		ix[j]++
+		if j == 0 || ix[j] < lens(j) {
+			return
+		}
+		ix[j] = 0
+	}
+}
+
+func algo() {
+
+	fmt.Println(time.Now().Format("2006010215"))
+
+	itemkeys := []string{"030120030310039-10131796"}
+	httpClient := &http.Client{
+		Timeout: time.Duration(6000) * time.Millisecond,
+	}
+	var res *http.Response
+	request_url := Summary_URL + "&itemKeys=" + strings.Join(itemkeys, ",")
+	t1 := time.Now().UnixNano()
+	res, err := httpClient.Get(request_url)
 	if err != nil {
-		fmt.Println(err)
+		res, err = httpClient.Get(request_url)
 	}
-	fmt.Println(i)
-
-	nums := make([]int, 0, 5)
-	nums = append(nums, 1)
-	nums = append(nums, 2)
-	nums = append(nums, 3)
-
-	fmt.Println(nums[:0])
-	fmt.Println(nums[1:])
-	fmt.Printf("%p\n", nums)
-	temp := append(nums[:0], nums[1:]...)
-	fmt.Printf("%p\n", nums)
-	fmt.Printf("%p\n", temp)
-	fmt.Println(temp)
-	fmt.Println(nums)
-
-	str := "0"
-	for i := 1; i < 200; i++ {
-		str = fmt.Sprintf("%s-%s-%d", str, ",", i)
+	t2 := time.Now().UnixNano()
+	if err != nil {
+		fmt.Printf("recall call summary http get error:url[%+v] err[%+v] time[%d ms]", request_url, err, (t2-t1)/1e6)
+		return
+	}
+	defer res.Body.Close()
+	content, err := ioutil.ReadAll(res.Body)
+	if err != nil {
+		fmt.Printf("http response data err[%+v]", err)
+		return
 	}
 
+	series_cnt := make(map[string]int)
+	brand_cnt := make(map[int64]int)
+	author_cnt := make(map[string]int)
+	summaryResponse := &algosummary.SummaryResponse{}
+	err = proto.Unmarshal([]byte(content), summaryResponse)
+	if err != nil || summaryResponse == nil {
+		fmt.Printf("Error When Parse summary pb[%+v]", err)
+		return
+	} else {
+		for pos, item := range summaryResponse.ItemList {
+			fmt.Printf("pos:%v, itemKey:%v, biztype:%v, title:%s, seriesid:%v  brand:%v  author:%v source:%v direction:%v original_author:%v content_type:%v\n", pos, item.AlgoBase.ItemKey, item.AlgoBase.BizType, item.AlgoBase.Title, item.AlgoNlp.UniqSeriesId, item.AlgoNlp.UniqBrandsId, item.AlgoBase.Author, item.AlgoBase.Source, item.AlgoBase.Direction, item.AlgoBase.OriginalAuthor, item.AlgoBase.ContentType)
+			for _, s := range strings.Split(item.AlgoNlp.UniqSeriesId, ",") {
+				series_cnt[s] += 1
+			}
+
+			brand_cnt[item.AlgoBase.GetClubClassId()] += 1
+
+		}
+	}
+	a, _ := json.Marshal(series_cnt)
+	fmt.Printf("车系统计： %+v\n", string(a))
+
+	a, _ = json.Marshal(brand_cnt)
+	fmt.Printf("品牌统计：%+v\n", string(a))
+
+	a, _ = json.Marshal(author_cnt)
+	fmt.Printf("作者统计：%+v\n", string(a))
 }

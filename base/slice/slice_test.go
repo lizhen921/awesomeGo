@@ -6,7 +6,8 @@ import (
 	"testing"
 )
 
-/**
+/*
+*
 使用截取array的形式初始化一个slice，则slice底层就是该数组，那么slice的len为截取的元素的个数，cap为从截取的位置开始到数组的结尾位置。由于slice和array公用一段内存，则修改slice、array都会相互影响
 */
 func TestArrayAndSlice(t *testing.T) {
@@ -105,4 +106,9 @@ func updateList(list []int, liStruct []Person) {
 type Person struct {
 	Name string
 	Age  int64
+}
+
+func TestPrint(t *testing.T) {
+	fmt.Printf("%10s %d\n", "123", 12)
+	fmt.Printf("%10s %d\n", "1234567", 12)
 }
