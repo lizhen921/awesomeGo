@@ -18,9 +18,8 @@ package dp
 
 /*
 f(n) = max(f(n-1),f(n-2)+n)
-
 */
-func rob(nums []int) int {
+func rob1(nums []int) int {
 	sum := 0
 	brePre := 0
 	pre := 0

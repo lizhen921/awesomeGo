@@ -12,6 +12,8 @@ require (
 	github.com/golang/protobuf v1.5.2
 	github.com/gomodule/redigo v1.8.5
 	github.com/grpc-ecosystem/grpc-gateway v1.14.6
+	github.com/leesper/go_rng v0.0.0-20190531154944-a612b043e353
+	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/pkg/errors v0.9.1
 	github.com/rs/xid v1.3.0
 	github.com/spf13/viper v1.7.1
